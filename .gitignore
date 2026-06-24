@@ -1,0 +1,8 @@
+# OS / editor junk — no need to publish these
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+*.tmp
+.vscode/
+.idea/

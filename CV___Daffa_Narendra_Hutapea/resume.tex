@@ -1,0 +1,204 @@
+%-------------------------
+% Data Science CV - Daffa Narendra Hutapea
+% Formatted to follow the Hacktiv8 Shareable DS CV Template
+% (Header with title + location, Summary, Education, Work Experience,
+%  Skills by category, Projects with [Deploy] links)
+%-------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\input{glyphtounicode}
+
+% Font options
+\usepackage[sfdefault]{roboto}  % Sans-serif font
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{\Large\bfseries\scshape\raggedright}{}{0em}{}[\titlerule]
+
+% Ensure PDF is machine readable
+\pdfgentounicode=1
+
+% Custom commands
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{-1pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4} \\
+  \end{tabular*}\vspace{-7pt}
+}
+
+% Project heading: {title}{deploy-url}{date}
+\newcommand{\resumeProjectHeading}[3]{
+\vspace{2pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} \enspace \href{#2}{\underline{[Deploy]}} & \textit{#3} \\
+  \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingList}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+  \textbf{\Huge Daffa Narendra Hutapea} \\ \vspace{3pt}
+  {\large Data Scientist / Data Analyst} \\ \vspace{3pt}
+  \small Jakarta, Indonesia $|$ +62 812 944 80320 $|$
+  \href{mailto:narendra.daffa08@gmail.com}{narendra.daffa08@gmail.com} $|$
+  \href{https://linkedin.com/in/daffa-hutapea}{\underline{LinkedIn}} $|$
+  \href{https://github.com/daphutapea}{\underline{GitHub}}
+\end{center}
+
+%----------SUMMARY----------
+\section*{Summary}
+Mathematics graduate from Universitas Indonesia and a Hacktiv8 Full Time Data Science graduate, skilled in building and deploying machine learning and deep learning models (classification and computer vision) using Python and SQL. Combines a strong analytical and statistical foundation with proven leadership and organizational experience from large-scale university events. Eager to apply data-driven problem solving and a growth mindset to create business impact as a Graduate Trainee.
+
+%----------EDUCATION----------
+\section{Education}
+\resumeSubHeadingList
+  \resumeSubheading
+      {Hacktiv8 Bootcamp}{April 2026 -- June 2026}
+      {Full Time Data Science Program $|$ Current Score: 95\%}{Jakarta, Indonesia}
+  \resumeSubheading
+      {Universitas Indonesia}{July 2022 -- February 2026}
+      {Bachelor of Science (B.Sc.) in Mathematics $|$ GPA: 3.45/4.00}{Depok, Indonesia}
+  \resumeSubheading
+      {SMA Negeri 99 Jakarta}{July 2019 -- May 2022}
+      {Natural Science Major}{Jakarta, Indonesia}
+\resumeSubHeadingListEnd
+
+%----------WORK EXPERIENCE----------
+\section{Work Experience}
+\resumeSubHeadingList
+  \resumeSubheading
+      {PT Kimia Farma, Tbk}{July 2024 -- August 2024}
+      {Big Data Analytics Intern}{Jakarta, Indonesia}
+      \resumeSubHeadingList
+          \resumeItem{\textbullet\ Gained hands-on experience in Data Warehouse process flow, Data Marts, Big Data concepts, and Data Pipeline management.}
+          \resumeItem{\textbullet\ Wrote SQL queries (including Common Table Expressions) and performed Create, Select, Update, and Delete operations on a Database Management System.}
+          \resumeItem{\textbullet\ Performed data analysis and visualization in Salesforce and built a sales dashboard in Google Looker Studio.}
+          \resumeItem{\textbullet\ Delivered a final project analyzing Kimia Farma's business performance for 2020--2023.}
+      \resumeSubHeadingListEnd
+\resumeSubHeadingListEnd
+
+%----------SKILLS----------
+\section{Skills \& Competencies}
+\resumeSubHeadingList
+  \resumeItem{\textbf{General Skills:} Exploratory Data Analysis, Machine Learning, Deep Learning, Computer Vision, Statistical Analysis, Data Visualization}
+  \resumeItem{\textbf{Programming Languages:} Python, SQL, MATLAB/Octave, LaTeX}
+  \resumeItem{\textbf{Libraries / Frameworks:} Scikit-Learn, TensorFlow, Keras, XGBoost, imbalanced-learn, Pandas, NumPy, Matplotlib, Seaborn}
+  \resumeItem{\textbf{Modeling Algorithms:} Regression, Decision Trees, Random Forest, KNN, SVM, Boosting (XGBoost), Neural Networks (CNN)}
+  \resumeItem{\textbf{Techniques:} Feature Engineering, Hyperparameter Tuning, Cross-Validation, Transfer Learning, Image Augmentation}
+  \resumeItem{\textbf{Tools / Deployment:} Streamlit, Docker, Hugging Face Spaces, Git, Google Looker Studio, Microsoft Office, Google Workspace}
+  \resumeItem{\textbf{Soft Skills:} Leadership, Teamwork, Problem Solving, Analytical Thinking, Communication}
+  \resumeItem{\textbf{Languages:} Indonesian (Native), English (Professional Working Proficiency; TOEFL ITP Equivalent: 570)}
+\resumeSubHeadingListEnd
+
+%----------PROJECTS----------
+\section{Projects}
+\resumeSubHeadingList
+  \resumeProjectHeading
+      {Land-Use Classification of Satellite Imagery (Computer Vision)}{https://huggingface.co/spaces/dahutapea/Classification-of-Satellite-Imagery}{June 2026}
+      \resumeSubHeadingList
+          \resumeItem{Built a 5-class land-use classifier for Sentinel-2 satellite tiles (EuroSAT: AnnualCrop, Forest, Highway, Industrial, River) to enable large-scale land monitoring without manual photo-interpretation. Benchmarked a from-scratch CNN against a fine-tuned MobileNetV2 transfer-learning model trained on the same image-augmented data, reaching 97.1\% test accuracy, and deployed it as an interactive web app.}
+          \resumeItem{\textbf{Technology / Tools:} Python, TensorFlow, Keras, MobileNetV2, Pandas, NumPy, Matplotlib, Seaborn, Streamlit, Docker, Hugging Face Spaces}
+      \resumeSubHeadingListEnd
+  \resumeProjectHeading
+      {Auto-Insurance Claim Fraud Detection}{https://huggingface.co/spaces/dahutapea/insurance-fraud-detection}{May 2026}
+      \resumeSubHeadingList
+          \resumeItem{Developed a binary classification model as a claims-screening tool that assigns a fraud risk score to each auto-insurance claim, helping investigators prioritize which cases to review. Benchmarked five algorithms (Decision Tree, Random Forest, KNN, SVM, XGBoost) within an imbalanced-learn pipeline using SMOTE and 5-fold stratified cross-validation, then tuned the best model (XGBoost) with GridSearchCV and a recall-leaning decision threshold, and deployed it as an interactive web app.}
+          \resumeItem{\textbf{Technology / Tools:} Python, Scikit-Learn, XGBoost, imbalanced-learn (SMOTE), Pandas, NumPy, Matplotlib, Seaborn, Streamlit, Docker, Hugging Face Spaces}
+      \resumeSubHeadingListEnd
+\resumeSubHeadingListEnd
+
+%----------ORGANIZATIONAL EXPERIENCE----------
+\section{Organizational Experience}
+\resumeSubHeadingList
+  \resumeSubheading
+      {Lecturer \& Laboratory Assistant -- Numerical Differential Equation}{February 2025 -- June 2025}
+      {Universitas Indonesia}{Depok, Indonesia}
+      \resumeSubHeadingList
+          \resumeItem{\textbullet\ Taught and mentored 70+ second-year students per section in numerical programming using MATLAB and Octave.}
+          \resumeItem{\textbullet\ Designed new teaching materials, timelines, and graded problem sets, and evaluated student performance.}
+      \resumeSubHeadingListEnd
+  \resumeSubheading
+      {Laboratory Assistant -- Numerical Methods}{February 2024 -- June 2024}
+      {Universitas Indonesia}{Depok, Indonesia}
+      \resumeSubHeadingList
+          \resumeItem{\textbullet\ Instructed 50+ first-year students per section in Python and LaTeX and coordinated with 15+ fellow assistants.}
+          \resumeItem{\textbullet\ Created teaching materials and problem sets and evaluated student assignments.}
+      \resumeSubHeadingListEnd
+  \resumeSubheading
+      {Lecturer Assistant -- Introduction to Data Science}{February 2024 -- June 2024}
+      {Universitas Indonesia}{Depok, Indonesia}
+      \resumeSubHeadingList
+          \resumeItem{\textbullet\ Delivered supplementary lessons to 40+ students and evaluated their assignments to strengthen subject understanding.}
+      \resumeSubHeadingListEnd
+  \resumeSubheading
+      {HIPMI PT UI 2023/2024}{September 2023 -- August 2024}
+      {Staff of Creative Economy, MSMEs, and Startup Development}{Depok, Indonesia}
+      \resumeSubHeadingList
+          \resumeItem{\textbullet\ Served as Head of Event Runner at Makarapreneur, a national business plan competition.}
+          \resumeItem{\textbullet\ Coordinated across the Visual Design, Public Relations, Operations, Logistics, and Competition divisions to deliver the Final Round and Gala Dinner.}
+      \resumeSubHeadingListEnd
+  \resumeSubheading
+      {Orientasi Kegiatan Kampus UI 2023 (OKK UI 2023)}{April 2023 -- August 2023}
+      {Vice Head of Sponsorship}{Depok, Indonesia}
+      \resumeSubHeadingList
+          \resumeItem{\textbullet\ Approached 100+ corporations across Instagram, Email, and LinkedIn, securing sponsorship from 24+ companies (e.g. Gojek, Bank Indonesia, Frisian Flag, Telkomsel).}
+          \resumeItem{\textbullet\ Led a team of sponsorship staff and coordinated with the treasurer to fulfill sponsor deliverables and accountability reports.}
+      \resumeSubHeadingListEnd
+\resumeSubHeadingListEnd
+
+%----------ACHIEVEMENTS----------
+\section{Achievements}
+\resumeSubHeadingList
+  \resumeItem{\textbullet\ \textbf{Best Sponsorship Staff} -- OKK UI 2023; promoted to Vice Head of Sponsorship for outstanding performance.}
+  \resumeItem{\textbullet\ \textbf{10th Highest Cumulative Score} -- 2022 Natural Science cohort, SMA Negeri 99 Jakarta.}
+\resumeSubHeadingListEnd
+
+%----------CERTIFICATIONS----------
+\section{Certifications}
+\resumeSubHeadingList
+  \resumeSubheading
+      {Lembaga Bahasa Internasional (LBI), Universitas Indonesia}{October 2022}
+      {English Proficiency Test (EPT) -- Score: 570 (TOEFL ITP Equivalent), Grade: A}{}
+      \resumeSubHeadingList
+          \resumeItem{\textbullet\ Certificate No. 11959/UN2.F7.LBI/PDP.00.07.01/2022}
+      \resumeSubHeadingListEnd
+\resumeSubHeadingListEnd
+
+\end{document}

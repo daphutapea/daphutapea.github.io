@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daffa Narendra Hutapea — Data Scientist &amp; Data Analyst</title>
+  <meta name="description" content="Portfolio of Daffa Narendra Hutapea — Data Scientist and Data Analyst. Mathematics graduate from Universitas Indonesia and Hacktiv8 Full-Time Data Science graduate, specializing in machine learning, deep learning, and computer vision." />
+  <meta name="author" content="Daffa Narendra Hutapea" />
+
+  <!-- Open Graph (controls how the link looks when shared on LinkedIn/WhatsApp) -->
+  <meta property="og:title" content="Daffa Narendra Hutapea — Data Scientist &amp; Data Analyst" />
+  <meta property="og:description" content="Machine learning, deep learning & computer vision projects by a UI Mathematics + Hacktiv8 Data Science graduate." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon: a simple gradient "D" drawn inline so no extra file is needed -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%238b5cf6'/><stop offset='1' stop-color='%2322d3ee'/></linearGradient></defs><rect width='100' height='100' rx='24' fill='url(%23g)'/><text x='50' y='70' font-size='60' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>D</text></svg>" />
+
+  <!-- Mark that JS is available, so scroll-reveal styles only hide content when
+       JavaScript can actually reveal it again (graceful degradation). -->
+  <script>document.documentElement.classList.add("js");</script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS (Play CDN — gives us all utility classes with no build step) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Custom design tokens for our "bold & modern" dark theme
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0a0a0f',          // page background
+            surface: '#12121c',      // cards
+            'surface-2': '#1a1a2b',  // raised cards / hovers
+            primary: '#8b5cf6',      // violet
+            secondary: '#d946ef',    // fuchsia
+            accent: '#22d3ee',       // cyan
+            muted: '#94a3b8',        // muted text
+          },
+          fontFamily: {
+            display: ['"Space Grotesk"', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Our custom styles (animations, gradients, etc.) -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="bg-ink text-slate-300 font-sans antialiased selection:bg-primary/30 selection:text-white">
+
+  <!-- Scroll progress bar -->
+  <div id="progress-bar" class="fixed top-0 left-0 h-1 z-50 bg-gradient-to-r from-primary via-secondary to-accent" style="width:0%"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header id="navbar" class="fixed top-0 inset-x-0 z-40 transition-all duration-300">
+    <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#home" class="font-display font-bold text-xl text-white tracking-tight">
+        Daffa<span class="text-gradient">.</span>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li>
+          <a href="#contact" class="px-4 py-2 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-lg hover:shadow-primary/30 transition">
+            Contact
+          </a>
+        </li>
+      </ul>
+
+      <!-- Mobile hamburger -->
+      <button id="menu-btn" aria-label="Open menu" class="md:hidden text-white p-2">
+        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h18M4 13h18M4 19h18"/></svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-surface/95 backdrop-blur-lg border-t border-white/5">
+      <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-medium">
+        <li><a href="#about" class="mobile-link block">About</a></li>
+        <li><a href="#skills" class="mobile-link block">Skills</a></li>
+        <li><a href="#projects" class="mobile-link block">Projects</a></li>
+        <li><a href="#experience" class="mobile-link block">Experience</a></li>
+        <li><a href="#education" class="mobile-link block">Education</a></li>
+        <li><a href="#contact" class="mobile-link block text-gradient font-semibold">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="home" class="relative min-h-screen flex items-center overflow-hidden pt-16">
+    <!-- Animated aurora background -->
+    <div class="aurora" aria-hidden="true">
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+      <span class="blob blob-3"></span>
+    </div>
+    <div class="grid-overlay" aria-hidden="true"></div>
+
+    <div class="relative max-w-6xl mx-auto px-6 w-full grid md:grid-cols-[1.3fr_1fr] gap-12 items-center">
+      <!-- Left: text -->
+      <div data-reveal>
+        <p class="font-mono text-accent text-sm mb-4 flex items-center gap-2">
+          <span class="inline-block w-8 h-px bg-accent"></span> Hello, I'm
+        </p>
+        <h1 class="font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-white leading-[1.05] tracking-tight">
+          Daffa Narendra<br />
+          <span class="text-gradient">Hutapea</span>
+        </h1>
+        <h2 class="mt-5 text-xl sm:text-2xl text-slate-400 font-display">
+          <span id="role" class="text-white font-semibold"></span><span class="cursor-blink text-accent">|</span>
+        </h2>
+        <p class="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-slate-400">
+          Mathematics graduate from <span class="text-white font-medium">Universitas Indonesia</span> and a Hacktiv8 Full-Time Data Science graduate. I build and deploy machine learning, deep learning, and computer vision models that turn data into real business impact.
+        </p>
+
+        <!-- CTAs -->
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a href="#projects" class="px-6 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all">
+            View My Work
+          </a>
+          <a href="#contact" class="px-6 py-3 rounded-full border border-white/15 text-white font-semibold hover:bg-white/5 hover:border-white/30 transition-all">
+            Get in Touch
+          </a>
+        </div>
+
+        <!-- Socials -->
+        <div class="mt-8 flex items-center gap-5">
+          <a href="https://github.com/daphutapea" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-1.7c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/daffa-hutapea" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+          <a href="mailto:narendra.daffa08@gmail.com" aria-label="Email" class="social-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: avatar card -->
+      <div class="hidden md:flex justify-center" data-reveal>
+        <div class="relative">
+          <div class="avatar-ring">
+            <div class="avatar-inner">
+              <span class="font-display font-bold text-6xl text-gradient">DNH</span>
+            </div>
+          </div>
+          <!-- Floating tech badges -->
+          <span class="float-badge float-badge-1 font-mono">Python</span>
+          <span class="float-badge float-badge-2 font-mono">TensorFlow</span>
+          <span class="float-badge float-badge-3 font-mono">SQL</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <a href="#about" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-500 hover:text-accent transition animate-bounce" aria-label="Scroll down">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+    </a>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" class="py-24 sm:py-32">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-heading" data-reveal>
+        <span class="section-kicker">01 — About</span>
+        <h2 class="section-title">Turning data into decisions</h2>
+      </div>
+
+      <div class="grid md:grid-cols-[1.4fr_1fr] gap-12 items-start mt-12">
+        <div class="space-y-5 text-lg leading-relaxed text-slate-400" data-reveal>
+          <p>
+            I'm a <span class="text-white font-medium">Data Scientist and Data Analyst</span> based in Jakarta, Indonesia. My foundation is a B.Sc. in Mathematics from <span class="text-white font-medium">Universitas Indonesia</span> — the country's leading university — which gives me a strong grip on the statistics and intuition behind every model I build.
+          </p>
+          <p>
+            Through the <span class="text-white font-medium">Hacktiv8 Full-Time Data Science</span> program (current score: 95%), I've shipped end-to-end machine learning, deep learning, and computer vision projects — from data wrangling and model benchmarking all the way to <span class="text-white font-medium">deployed, interactive web apps</span>.
+          </p>
+          <p>
+            Beyond the code, my years leading large-scale university events and mentoring 160+ students taught me how to communicate complex ideas clearly and deliver under pressure. I'm driven by a simple goal: use data-driven problem solving to create measurable business impact.
+          </p>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 gap-4" data-reveal>
+          <div class="stat-card">
+            <div class="stat-num">3.45</div>
+            <div class="stat-label">GPA at UI / 4.00</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">95%</div>
+            <div class="stat-label">Hacktiv8 Score</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">97.1%</div>
+            <div class="stat-label">Best Model Accuracy</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">160+</div>
+            <div class="stat-label">Students Mentored</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section id="skills" class="py-24 sm:py-32 bg-surface/40 border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-heading" data-reveal>
+        <span class="section-kicker">02 — Skills</span>
+        <h2 class="section-title">My technical toolkit</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        <!-- Card -->
+        <div class="skill-card" data-reveal>
+          <div class="skill-icon">🤖</div>
+          <h3 class="skill-title">Machine Learning &amp; AI</h3>
+          <div class="skill-tags">
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Deep Learning</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">EDA</span>
+            <span class="tag">Statistical Analysis</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-reveal>
+          <div class="skill-icon">💻</div>
+          <h3 class="skill-title">Languages</h3>
+          <div class="skill-tags">
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">MATLAB / Octave</span>
+            <span class="tag">LaTeX</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-reveal>
+          <div class="skill-icon">📚</div>
+          <h3 class="skill-title">Libraries &amp; Frameworks</h3>
+          <div class="skill-tags">
+            <span class="tag">Scikit-Learn</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">Keras</span>
+            <span class="tag">XGBoost</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Matplotlib</span>
+            <span class="tag">Seaborn</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-reveal>
+          <div class="skill-icon">🧮</div>
+          <h3 class="skill-title">Modeling Algorithms</h3>
+          <div class="skill-tags">
+            <span class="tag">Regression</span>
+            <span class="tag">Random Forest</span>
+            <span class="tag">Decision Trees</span>
+            <span class="tag">KNN</span>
+            <span class="tag">SVM</span>
+            <span class="tag">CNN</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-reveal>
+          <div class="skill-icon">⚙️</div>
+          <h3 class="skill-title">Techniques</h3>
+          <div class="skill-tags">
+            <span class="tag">Feature Engineering</span>
+            <span class="tag">Hyperparameter Tuning</span>
+            <span class="tag">Cross-Validation</span>
+            <span class="tag">Transfer Learning</span>
+            <span class="tag">Image Augmentation</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-reveal>
+          <div class="skill-icon">🚀</div>
+          <h3 class="skill-title">Tools &amp; Deployment</h3>
+          <div class="skill-tags">
+            <span class="tag">Streamlit</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Hugging Face</span>
+            <span class="tag">Git</span>
+            <span class="tag">Looker Studio</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section id="projects" class="py-24 sm:py-32">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-heading" data-reveal>
+        <span class="section-kicker">03 — Projects</span>
+        <h2 class="section-title">Featured work</h2>
+        <p class="section-sub">End-to-end projects, each deployed as a live, interactive web app.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 mt-12">
+        <!-- Project 1 -->
+        <article class="project-card" data-reveal>
+          <div class="project-banner banner-1">
+            <span class="project-emoji">🛰️</span>
+            <span class="project-category">Computer Vision · Deep Learning</span>
+          </div>
+          <div class="project-body">
+            <div class="flex items-center justify-between gap-4">
+              <h3 class="project-title">Land-Use Classification of Satellite Imagery</h3>
+              <span class="project-date font-mono">Jun 2026</span>
+            </div>
+            <p class="project-desc">
+              A 5-class land-use classifier for Sentinel-2 satellite tiles (EuroSAT) enabling large-scale land monitoring without manual photo-interpretation. Benchmarked a from-scratch CNN against a fine-tuned <span class="text-white">MobileNetV2</span> transfer-learning model, reaching <span class="text-accent font-semibold">97.1% test accuracy</span>.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">MobileNetV2</span><span class="tag">Streamlit</span><span class="tag">Docker</span><span class="tag">Hugging Face</span>
+            </div>
+            <div class="project-links">
+              <a href="https://huggingface.co/spaces/dahutapea/Classification-of-Satellite-Imagery" target="_blank" rel="noopener" class="project-link-primary">
+                Live Demo
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card" data-reveal>
+          <div class="project-banner banner-2">
+            <span class="project-emoji">🛡️</span>
+            <span class="project-category">Machine Learning · Classification</span>
+          </div>
+          <div class="project-body">
+            <div class="flex items-center justify-between gap-4">
+              <h3 class="project-title">Auto-Insurance Claim Fraud Detection</h3>
+              <span class="project-date font-mono">May 2026</span>
+            </div>
+            <p class="project-desc">
+              A claims-screening tool that assigns a fraud-risk score to each auto-insurance claim, helping investigators prioritize reviews. Benchmarked five algorithms in an imbalanced-learn pipeline with <span class="text-white">SMOTE</span> &amp; 5-fold stratified CV, then tuned <span class="text-white">XGBoost</span> with a recall-leaning threshold.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Python</span><span class="tag">Scikit-Learn</span><span class="tag">XGBoost</span><span class="tag">SMOTE</span><span class="tag">Streamlit</span><span class="tag">Docker</span><span class="tag">Hugging Face</span>
+            </div>
+            <div class="project-links">
+              <a href="https://huggingface.co/spaces/dahutapea/insurance-fraud-detection" target="_blank" rel="noopener" class="project-link-primary">
+                Live Demo
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- More on GitHub -->
+      <div class="mt-10 text-center" data-reveal>
+        <a href="https://github.com/daphutapea" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-slate-400 hover:text-white transition font-medium">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-1.7c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+          See more on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section id="experience" class="py-24 sm:py-32 bg-surface/40 border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-heading" data-reveal>
+        <span class="section-kicker">04 — Experience</span>
+        <h2 class="section-title">Where I've worked &amp; led</h2>
+      </div>
+
+      <div class="mt-12 max-w-3xl mx-auto">
+        <div class="timeline">
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date font-mono">Jul 2024 — Aug 2024</span>
+              <h3 class="timeline-title">Big Data Analytics Intern</h3>
+              <p class="timeline-org">PT Kimia Farma, Tbk · Jakarta</p>
+              <ul class="timeline-list">
+                <li>Built SQL queries (incl. CTEs) and performed CRUD operations on a Database Management System.</li>
+                <li>Analyzed and visualized data in Salesforce; built a sales dashboard in Google Looker Studio.</li>
+                <li>Delivered a final project analyzing Kimia Farma's 2020–2023 business performance.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date font-mono">Feb 2025 — Jun 2025</span>
+              <h3 class="timeline-title">Lecturer &amp; Laboratory Assistant — Numerical Differential Equations</h3>
+              <p class="timeline-org">Universitas Indonesia · Depok</p>
+              <ul class="timeline-list">
+                <li>Taught and mentored 70+ second-year students per section in numerical programming with MATLAB &amp; Octave.</li>
+                <li>Designed teaching materials, timelines, and graded problem sets.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date font-mono">Feb 2024 — Jun 2024</span>
+              <h3 class="timeline-title">Laboratory &amp; Lecturer Assistant — Numerical Methods / Data Science</h3>
+              <p class="timeline-org">Universitas Indonesia · Depok</p>
+              <ul class="timeline-list">
+                <li>Instructed 90+ students in Python &amp; LaTeX, coordinating with 15+ fellow assistants.</li>
+                <li>Created teaching materials and problem sets and evaluated assignments.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date font-mono">Apr 2023 — Aug 2023</span>
+              <h3 class="timeline-title">Vice Head of Sponsorship</h3>
+              <p class="timeline-org">Orientasi Kegiatan Kampus UI 2023 · Depok</p>
+              <ul class="timeline-list">
+                <li>Approached 100+ corporations and secured sponsorship from 24+ companies (Gojek, Bank Indonesia, Telkomsel, Frisian Flag).</li>
+                <li>Led the sponsorship team and coordinated deliverables — awarded <span class="text-white">Best Sponsorship Staff</span>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EDUCATION ===================== -->
+  <section id="education" class="py-24 sm:py-32">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-heading" data-reveal>
+        <span class="section-kicker">05 — Education</span>
+        <h2 class="section-title">Academic background</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mt-12">
+        <div class="edu-card" data-reveal>
+          <span class="edu-badge">2026</span>
+          <h3 class="edu-school">Hacktiv8 Bootcamp</h3>
+          <p class="edu-degree">Full-Time Data Science Program</p>
+          <p class="edu-meta">Current Score: 95% · Jakarta</p>
+        </div>
+        <div class="edu-card edu-featured" data-reveal>
+          <span class="edu-badge">2022 — 2026</span>
+          <h3 class="edu-school">Universitas Indonesia</h3>
+          <p class="edu-degree">B.Sc. in Mathematics</p>
+          <p class="edu-meta">GPA: 3.45 / 4.00 · Depok</p>
+        </div>
+        <div class="edu-card" data-reveal>
+          <span class="edu-badge">2019 — 2022</span>
+          <h3 class="edu-school">SMA Negeri 99 Jakarta</h3>
+          <p class="edu-degree">Natural Science Major</p>
+          <p class="edu-meta">Jakarta</p>
+        </div>
+      </div>
+
+      <!-- Certifications & achievements strip -->
+      <div class="mt-8 grid sm:grid-cols-2 gap-4" data-reveal>
+        <div class="cert-item">
+          <span class="cert-icon">🏆</span>
+          <div>
+            <p class="text-white font-medium">Best Sponsorship Staff — OKK UI 2023</p>
+            <p class="text-sm text-slate-500">Promoted to Vice Head for outstanding performance.</p>
+          </div>
+        </div>
+        <div class="cert-item">
+          <span class="cert-icon">📜</span>
+          <div>
+            <p class="text-white font-medium">English Proficiency Test — Score 570 (Grade A)</p>
+            <p class="text-sm text-slate-500">TOEFL ITP equivalent · LBI, Universitas Indonesia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="py-24 sm:py-32 bg-surface/40 border-t border-white/5">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="section-heading text-center" data-reveal>
+        <span class="section-kicker justify-center">06 — Contact</span>
+        <h2 class="section-title">Let's work together</h2>
+        <p class="section-sub mx-auto">
+          I'm open to Graduate Trainee, Data Scientist, and Data Analyst opportunities. Have a project or role in mind? I'd love to hear from you.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-10 mt-12 items-start">
+        <!-- Contact info -->
+        <div class="space-y-4" data-reveal>
+          <a href="mailto:narendra.daffa08@gmail.com" class="contact-row">
+            <span class="contact-ic">✉️</span>
+            <div>
+              <p class="contact-label">Email</p>
+              <p class="contact-value">narendra.daffa08@gmail.com</p>
+            </div>
+          </a>
+          <a href="tel:+6281294480320" class="contact-row">
+            <span class="contact-ic">📱</span>
+            <div>
+              <p class="contact-label">Phone</p>
+              <p class="contact-value">+62 812 944 80320</p>
+            </div>
+          </a>
+          <a href="https://linkedin.com/in/daffa-hutapea" target="_blank" rel="noopener" class="contact-row">
+            <span class="contact-ic">💼</span>
+            <div>
+              <p class="contact-label">LinkedIn</p>
+              <p class="contact-value">in/daffa-hutapea</p>
+            </div>
+          </a>
+          <a href="https://github.com/daphutapea" target="_blank" rel="noopener" class="contact-row">
+            <span class="contact-ic">🐙</span>
+            <div>
+              <p class="contact-label">GitHub</p>
+              <p class="contact-value">@daphutapea</p>
+            </div>
+          </a>
+          <div class="contact-row !cursor-default">
+            <span class="contact-ic">📍</span>
+            <div>
+              <p class="contact-label">Location</p>
+              <p class="contact-value">Jakarta, Indonesia</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact form (opens the visitor's email app pre-filled) -->
+        <form id="contact-form" class="space-y-4" data-reveal>
+          <div>
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" required placeholder="Your name" class="form-input" />
+          </div>
+          <div>
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" required placeholder="you@example.com" class="form-input" />
+          </div>
+          <div>
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" rows="4" required placeholder="Tell me about the opportunity..." class="form-input resize-none"></textarea>
+          </div>
+          <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all">
+            Send Message
+          </button>
+          <p class="text-xs text-slate-500 text-center">This opens your email app with the message pre-filled.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="py-10 border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-slate-500">
+        © <span id="year"></span> Daffa Narendra Hutapea. Built with care.
+      </p>
+      <div class="flex items-center gap-5">
+        <a href="https://github.com/daphutapea" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-1.7c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/daffa-hutapea" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-surface-2 border border-white/10 text-white grid place-items-center opacity-0 pointer-events-none transition-all hover:bg-primary">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
