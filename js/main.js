@@ -118,19 +118,49 @@ document.addEventListener("DOMContentLoaded", () => {
     type();
   }
 
-  /* ---------- Contact form -> opens email app pre-filled ---------- */
+  /* ---------- Contact form -> delivers to inbox via Web3Forms ---------- */
   const form = document.getElementById("contact-form");
-  form?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
+  const formStatus = document.getElementById("form-status");
+  const submitBtn = document.getElementById("submit-btn");
 
-    const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
-    const body = encodeURIComponent(
-      `${message}\n\n- ${name}\nReply to: ${email}`
-    );
-    // Opens the visitor's default email client addressed to Daffa
-    window.location.href = `mailto:narendra.daffa08@gmail.com?subject=${subject}&body=${body}`;
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const originalLabel = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+    formStatus.textContent = "";
+    formStatus.className = "text-xs text-slate-500 text-center";
+
+    try {
+      const payload = Object.fromEntries(new FormData(form));
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+      const data = await response.json();
+
+      if (data.success) {
+        formStatus.textContent =
+          "Thanks! Your message was sent. I'll get back to you soon.";
+        formStatus.className = "text-sm text-emerald-400 text-center font-medium";
+        form.reset();
+      } else {
+        formStatus.textContent =
+          "Something went wrong. Please email me directly at narendra.daffa08@gmail.com.";
+        formStatus.className = "text-sm text-rose-400 text-center font-medium";
+      }
+    } catch (err) {
+      formStatus.textContent =
+        "Network error. Please email me directly at narendra.daffa08@gmail.com.";
+      formStatus.className = "text-sm text-rose-400 text-center font-medium";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+    }
   });
 });

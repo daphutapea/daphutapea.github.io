@@ -544,24 +544,31 @@
           </div>
         </div>
 
-        <!-- Contact form (opens the visitor's email app pre-filled) -->
+        <!-- Contact form (delivers messages to Daffa's inbox via Web3Forms) -->
         <form id="contact-form" class="space-y-4" data-reveal>
+          <!-- Web3Forms config (hidden fields) -->
+          <input type="hidden" name="access_key" value="25ce9ee3-b3ce-41cf-bd4f-90b988872d0d" />
+          <input type="hidden" name="subject" value="New message from your portfolio website" />
+          <input type="hidden" name="from_name" value="Portfolio Website Contact" />
+          <!-- Honeypot spam trap: real visitors leave this empty -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+
           <div>
             <label for="name" class="form-label">Name</label>
-            <input type="text" id="name" required placeholder="Your name" class="form-input" />
+            <input type="text" id="name" name="name" required placeholder="Your name" class="form-input" />
           </div>
           <div>
             <label for="email" class="form-label">Email</label>
-            <input type="email" id="email" required placeholder="you@example.com" class="form-input" />
+            <input type="email" id="email" name="email" required placeholder="you@example.com" class="form-input" />
           </div>
           <div>
             <label for="message" class="form-label">Message</label>
-            <textarea id="message" rows="4" required placeholder="Tell me about the opportunity..." class="form-input resize-none"></textarea>
+            <textarea id="message" name="message" rows="4" required placeholder="Tell me about the opportunity..." class="form-input resize-none"></textarea>
           </div>
-          <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all">
+          <button type="submit" id="submit-btn" class="w-full py-3 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all disabled:opacity-60 disabled:cursor-not-allowed">
             Send Message
           </button>
-          <p class="text-xs text-slate-500 text-center">This opens your email app with the message pre-filled.</p>
+          <p id="form-status" class="text-xs text-slate-500 text-center">Your message goes straight to my inbox.</p>
         </form>
       </div>
     </div>
