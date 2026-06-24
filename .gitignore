@@ -6,3 +6,6 @@ Desktop.ini
 *.tmp
 .vscode/
 .idea/
+
+# Large original photo — the site ships the optimized assets/profile.jpg instead
+assets/Daffa Hutapea Profile.jpg

@@ -134,6 +134,7 @@ body { overflow-x: hidden; }
   background: #12121c;
   display: grid;
   place-items: center;
+  overflow: hidden;
 }
 @keyframes spinGrad {
   0% { background-position: 0% 50%; }
