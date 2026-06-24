@@ -228,6 +228,16 @@ body { overflow-x: hidden; }
   border-color: rgba(139, 92, 246, 0.45);
   box-shadow: 0 20px 40px -20px rgba(139, 92, 246, 0.4);
 }
+/* Skills use a centered flex layout so a lone trailing card stays centered
+   (1 column on mobile, 2 on small screens, 3 on large). gap is 1.5rem. */
+#skills .skill-card { flex: 0 1 100%; }
+@media (min-width: 640px) {
+  #skills .skill-card { flex-basis: calc(50% - 0.75rem); }
+}
+@media (min-width: 1024px) {
+  #skills .skill-card { flex-basis: calc(33.333% - 1rem); }
+}
+
 .skill-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
 .skill-title {
   font-family: "Space Grotesk", sans-serif;
