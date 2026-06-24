@@ -1,33 +1,35 @@
-# Daffa Narendra Hutapea — Portfolio Website
+# Daffa Narendra Hutapea - Portfolio Website
 
 A bold, modern, single-page portfolio built with **HTML + Tailwind CSS + vanilla JavaScript**.
-No installation, no build step — it just runs in your browser.
+No installation, no build step - it just runs in your browser.
+
+**Live site:** https://daphutapea.github.io
 
 ---
 
-## 🚀 How to view it
+## How to view it locally
 
 **The easy way:** open the folder and **double-click `index.html`**. It opens in your browser. Done.
 
-> ℹ️ It needs an internet connection the first time you open it, because the fonts and the
+> Note: It needs an internet connection the first time you open it, because the fonts and the
 > Tailwind styling library load from the web.
 
 ---
 
-## 📁 What's in here
+## What's in here
 
 ```
 Web Porto Project/
-├── index.html        ← the whole page (text content lives here)
-├── css/styles.css    ← colors, animations, card styles
-├── js/main.js        ← menu, scroll effects, typing animation, contact form
-├── assets/           ← put your photo and CV PDF here (see below)
-└── README.md         ← this file
+|-- index.html        <- the whole page (text content lives here)
+|-- css/styles.css    <- colors, animations, card styles
+|-- js/main.js        <- menu, scroll effects, typing animation, contact form
+|-- assets/           <- your photo (profile.jpg) and CV PDF live here
++-- README.md         <- this file
 ```
 
 ---
 
-## ✏️ How to edit your information
+## How to edit your information
 
 All your text lives in **`index.html`**. Open it in any text editor (even Notepad works,
 but [VS Code](https://code.visualstudio.com/) is nicer and free). Look for the big comment
@@ -48,36 +50,39 @@ The roles that "type" themselves in the hero are in **`js/main.js`**, in the `ro
 
 ---
 
-## 🖼️ Add your photo (optional, recommended)
+## Your photo
 
-Right now the hero shows your initials **"DNH"** in a gradient circle. To use a real photo:
+Done - the hero shows your headshot from `assets/profile.jpg` (an optimized, web-sized copy).
+To change it later, replace that file (square images look best) and bump the `?v=` number on
+the `<img src="assets/profile.jpg?v=2">` tag in `index.html` so browsers load the new one.
 
-1. Put your photo in the `assets/` folder, e.g. `assets/profile.jpg`.
-2. In `index.html`, find the `<div class="avatar-inner">` block and replace the
-   `<span ...>DNH</span>` line with:
-   ```html
-   <img src="assets/profile.jpg" alt="Daffa Narendra Hutapea" class="w-full h-full object-cover rounded-full" />
-   ```
+---
 
-## 📄 Add your CV for download (optional)
+## Add your CV for download (optional)
 
 1. Compile your `resume.tex` to a PDF (e.g. with [Overleaf](https://overleaf.com)) and save it as
    `assets/Daffa_Narendra_Hutapea_CV.pdf`.
-2. Tell me and I'll wire up a **"Download CV"** button in the hero — or add it yourself by
+2. Tell me and I'll wire up a "Download CV" button in the hero - or add it yourself by
    copying one of the existing buttons and pointing its `href` to that file.
 
 ---
 
-## 🌐 Putting it online for free (when you're ready)
+## How it is hosted
 
-Since you already have a GitHub account (`@daphutapea`), the easiest free hosting is:
+The site is published for free with **GitHub Pages** from the repo `daphutapea/daphutapea.github.io`.
+Because the repo is named `<username>.github.io`, GitHub serves it at the root URL
+https://daphutapea.github.io and rebuilds automatically on every push to `main`.
 
-- **GitHub Pages** — upload this folder to a repository, enable Pages in the repo settings.
-  Your site goes live at `https://daphutapea.github.io/<repo-name>/`.
-- **Netlify** or **Vercel** — drag-and-drop this folder onto their website. Done in seconds.
+**To update the live site:** edit the files, then run:
 
-I can walk you through any of these step by step. Just ask.
+```
+git add -A
+git commit -m "your message"
+git push
+```
+
+The change goes live in about a minute. (Or just tell me what to change and I will publish it.)
 
 ---
 
-Built with care. Questions or tweaks? Just say the word.
+Questions or tweaks? Just say the word.
