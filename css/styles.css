@@ -1,5 +1,5 @@
 /* =========================================================
-   Daffa Narendra Hutapea — Portfolio
+   Daffa Narendra Hutapea - Portfolio
    Custom styles layered on top of Tailwind (Play CDN).
    Tailwind handles layout/spacing in the HTML; this file
    handles animations, gradients, and reusable components.
@@ -342,7 +342,7 @@ body { overflow-x: hidden; }
   line-height: 1.5;
 }
 .timeline-list li::before {
-  content: "▸";
+  content: ">";
   position: absolute;
   left: 0;
   color: #d946ef;

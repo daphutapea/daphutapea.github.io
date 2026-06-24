@@ -1,6 +1,6 @@
 /* =========================================================
-   Daffa Narendra Hutapea — Portfolio interactions
-   Plain (vanilla) JavaScript — no libraries needed.
+   Daffa Narendra Hutapea - Portfolio interactions
+   Plain (vanilla) JavaScript - no libraries needed.
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
     const body = encodeURIComponent(
-      `${message}\n\n— ${name}\nReply to: ${email}`
+      `${message}\n\n- ${name}\nReply to: ${email}`
     );
     // Opens the visitor's default email client addressed to Daffa
     window.location.href = `mailto:narendra.daffa08@gmail.com?subject=${subject}&body=${body}`;
