@@ -315,7 +315,33 @@ body { overflow-x: hidden; }
   line-height: 1.3;
 }
 .project-date { font-size: 0.75rem; color: #64748b; white-space: nowrap; }
-.project-desc { color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin: 0.85rem 0 1.1rem; }
+.project-desc { color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin: 0.85rem 0 0.5rem; }
+/* Collapsed state: show only a short preview of the description */
+.project-desc.clamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+/* "Read more" / "Show less" toggle */
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0 0 1.1rem;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #22d3ee;
+  transition: gap 0.2s, color 0.2s;
+}
+.read-more:hover { gap: 0.5rem; color: #67e8f9; }
+.read-more svg { transition: transform 0.25s; }
+.read-more[aria-expanded="true"] svg { transform: rotate(180deg); }
 .project-tags { margin-bottom: 1.25rem; }
 .project-links { display: flex; gap: 0.75rem; }
 .project-link-primary {

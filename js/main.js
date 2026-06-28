@@ -118,6 +118,36 @@ document.addEventListener("DOMContentLoaded", () => {
     type();
   }
 
+  /* ---------- Project description "Read more" toggles ---------- */
+  const clampedDescs = document.querySelectorAll(".project-desc.clamped");
+
+  // Hide the toggle on descriptions that fit within the preview (no overflow).
+  const syncReadMore = () => {
+    clampedDescs.forEach((desc) => {
+      const btn = desc.nextElementSibling;
+      if (!btn || !btn.classList.contains("read-more")) return;
+      if (desc.classList.contains("clamped")) {
+        btn.style.display =
+          desc.scrollHeight > desc.clientHeight + 2 ? "inline-flex" : "none";
+      }
+    });
+  };
+
+  clampedDescs.forEach((desc) => {
+    const btn = desc.nextElementSibling;
+    if (!btn || !btn.classList.contains("read-more")) return;
+    btn.addEventListener("click", () => {
+      // toggle() returns true when "clamped" is added back (collapsed)
+      const collapsed = desc.classList.toggle("clamped");
+      btn.setAttribute("aria-expanded", String(!collapsed));
+      const label = btn.querySelector(".read-more-label");
+      if (label) label.textContent = collapsed ? "Read more" : "Show less";
+    });
+  });
+
+  syncReadMore();
+  window.addEventListener("resize", syncReadMore, { passive: true });
+
   /* ---------- Contact form -> delivers to inbox via Web3Forms ---------- */
   const form = document.getElementById("contact-form");
   const formStatus = document.getElementById("form-status");
