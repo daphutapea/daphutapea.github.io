@@ -299,6 +299,7 @@ body { overflow-x: hidden; }
 .banner-1 { background: linear-gradient(135deg, #4c1d95, #6d28d9, #2563eb); }
 .banner-2 { background: linear-gradient(135deg, #831843, #be185d, #7c3aed); }
 .banner-3 { background: linear-gradient(135deg, #134e4a, #0e7490, #4338ca); }
+.banner-4 { background: linear-gradient(135deg, #065f46, #0d9488, #0284c7); }
 .project-emoji { font-size: 3rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); }
 .project-category {
   font-family: "JetBrains Mono", monospace;
