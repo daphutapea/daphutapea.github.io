@@ -84,7 +84,7 @@
 
 %----------SUMMARY----------
 \section*{Summary}
-Mathematics graduate from Universitas Indonesia and a Hacktiv8 Full Time Data Science graduate, skilled in building and deploying machine learning and deep learning models (classification, computer vision, and NLP) using Python and SQL. Combines a strong analytical and statistical foundation with proven leadership and organizational experience from large-scale university events. Eager to apply data-driven problem solving and a growth mindset to create business impact as a Graduate Trainee.
+Mathematics graduate from Universitas Indonesia and a Hacktiv8 Full Time Data Science graduate, skilled in building and deploying machine learning and deep learning models (classification, computer vision, NLP, and retrieval-augmented LLM applications) using Python and SQL. Combines a strong analytical and statistical foundation with proven leadership and organizational experience from large-scale university events. Eager to apply data-driven problem solving and a growth mindset to create business impact as a Graduate Trainee.
 
 %----------EDUCATION----------
 \section{Education}
@@ -117,12 +117,12 @@ Mathematics graduate from Universitas Indonesia and a Hacktiv8 Full Time Data Sc
 %----------SKILLS----------
 \section{Skills \& Competencies}
 \resumeSubHeadingList
-  \resumeItem{\textbf{General Skills:} EDA, Machine Learning, Deep Learning, Computer Vision, NLP, Statistical Analysis, Data Visualization}
+  \resumeItem{\textbf{General Skills:} EDA, Machine Learning, Deep Learning, Computer Vision, NLP, Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), Statistical Analysis, Data Visualization}
   \resumeItem{\textbf{Programming Languages:} Python, SQL, LaTeX}
-  \resumeItem{\textbf{Libraries / Frameworks:} Scikit-Learn, TensorFlow, Keras, XGBoost, imbalanced-learn, BERTopic, Transformers, Gensim, Pandas, NumPy, Matplotlib, Seaborn}
+  \resumeItem{\textbf{Libraries / Frameworks:} Scikit-Learn, TensorFlow, Keras, XGBoost, imbalanced-learn, BERTopic, Transformers, LangChain, Gensim, Pandas, NumPy, Matplotlib, Seaborn}
   \resumeItem{\textbf{Modeling Algorithms:} Regression, Decision Trees, Random Forest, KNN, SVM, Boosting (XGBoost), CNN, K-Means, LDA}
-  \resumeItem{\textbf{Techniques:} Feature Engineering, Hyperparameter Tuning, Cross-Validation, Transfer Learning, Image Augmentation, Topic Modeling}
-  \resumeItem{\textbf{Tools / Deployment:} Streamlit, Docker, Hugging Face Spaces, Git, Google Looker Studio, Elasticsearch, Kibana, Microsoft Office, Google Workspace}
+  \resumeItem{\textbf{Techniques:} Feature Engineering, Hyperparameter Tuning, Cross-Validation, Transfer Learning, Image Augmentation, Topic Modeling, Text Embeddings, Semantic Search, Prompt Engineering}
+  \resumeItem{\textbf{Tools / Deployment:} Streamlit, Docker, Hugging Face Spaces, ChromaDB (vector database), Groq API, Git, Google Looker Studio, Elasticsearch, Kibana, Microsoft Office, Google Workspace}
   \resumeItem{\textbf{Soft Skills:} Leadership, Teamwork, Problem Solving, Analytical Thinking, Communication}
   \resumeItem{\textbf{Languages:} Indonesian (Native), English (Professional Working Proficiency; TOEFL ITP Equivalent: 570)}
 \resumeSubHeadingListEnd
@@ -130,6 +130,12 @@ Mathematics graduate from Universitas Indonesia and a Hacktiv8 Full Time Data Sc
 %----------PROJECTS----------
 \section{Projects}
 \resumeSubHeadingList
+  \resumeProjectHeading
+      {FinChat: Retrieval-Augmented Q\&A over SEC 10-K Filings (LLM / RAG)}{https://finchat-chi.vercel.app/}{July 2026}
+      \resumeSubHeadingList
+          \resumeItem{Built a Retrieval-Augmented Generation (RAG) chatbot answering plain-English questions over the SEC 10-K filings of 25 major U.S. companies, with every answer grounded in the source text and cited to prevent hallucination. Combined semantic search (BGE embeddings + ChromaDB) with hybrid XBRL retrieval and Python-computed financial ratios, generating answers via Llama 3.3 70B on Groq. Lifted FinanceBench accuracy from 20\% to 50\%, scored 93\% on a capability gold set, and deployed it as an interactive web app.}
+          \resumeItem{\textbf{Technology / Tools:} Python, LangChain, ChromaDB, Hugging Face Embeddings (BGE), Groq (Llama 3.3 70B), edgartools (SEC EDGAR), XBRL, Next.js, FastAPI, Vercel, Hugging Face Spaces, Git}
+      \resumeSubHeadingListEnd
   \resumeProjectHeading
       {Land-Use Classification of Satellite Imagery (Computer Vision)}{https://huggingface.co/spaces/dahutapea/Classification-of-Satellite-Imagery}{June 2026}
       \resumeSubHeadingList
