@@ -42,7 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
   onScroll();
 
   toTop?.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (lenis) lenis.scrollTo(0);
+    else window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   /* ---------- Scroll-reveal animations ---------- */
@@ -147,6 +148,113 @@ document.addEventListener("DOMContentLoaded", () => {
 
   syncReadMore();
   window.addEventListener("resize", syncReadMore, { passive: true });
+
+  /* ---------- Motion preference ---------- */
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- Smooth scrolling (Lenis, loaded from CDN) ---------- */
+  let lenis = null;
+  if (!reduceMotion && typeof Lenis !== "undefined") {
+    try {
+      lenis = new Lenis({ duration: 1.1, smoothWheel: true });
+      const raf = (time) => {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      };
+      requestAnimationFrame(raf);
+      // Keep the progress bar / active-nav / back-to-top in sync with Lenis
+      lenis.on("scroll", onScroll);
+    } catch (err) {
+      lenis = null;
+    }
+  }
+
+  // Smooth-scroll in-page anchor links (via Lenis, or native scroll as fallback)
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    const href = link.getAttribute("href");
+    if (!href || href.length < 2) return;
+    const target = document.querySelector(href);
+    if (!target) return;
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (lenis) lenis.scrollTo(target, { offset: -80 });
+      else target.scrollIntoView({ behavior: "smooth" });
+      mobileMenu?.classList.add("hidden");
+    });
+  });
+
+  /* ---------- Animated stat counters (count up when scrolled into view) ---------- */
+  const animateCount = (el) => {
+    const match = el.textContent.trim().match(/^([\d.]+)(.*)$/);
+    if (!match) return;
+    const target = parseFloat(match[1]);
+    const suffix = match[2] || "";
+    const decimals = (match[1].split(".")[1] || "").length;
+    if (reduceMotion) {
+      el.textContent = target.toFixed(decimals) + suffix;
+      return;
+    }
+    const duration = 1400;
+    const start = performance.now();
+    const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+    const tick = (now) => {
+      const p = Math.min((now - start) / duration, 1);
+      el.textContent = (target * easeOut(p)).toFixed(decimals) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+      else el.textContent = target.toFixed(decimals) + suffix;
+    };
+    requestAnimationFrame(tick);
+  };
+  const statObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          statObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+  document.querySelectorAll(".stat-num").forEach((el) => statObserver.observe(el));
+
+  /* ---------- Magnetic hero buttons (gently pull toward the cursor) ---------- */
+  if (!reduceMotion) {
+    document.querySelectorAll(".magnetic").forEach((el) => {
+      el.addEventListener("mousemove", (e) => {
+        const r = el.getBoundingClientRect();
+        const mx = e.clientX - (r.left + r.width / 2);
+        const my = e.clientY - (r.top + r.height / 2);
+        el.style.transform = `translate(${mx * 0.3}px, ${my * 0.4}px)`;
+      });
+      el.addEventListener("mouseleave", () => {
+        el.style.transform = "";
+      });
+    });
+  }
+
+  /* ---------- Interactive project cards: 3D tilt + cursor-following glow ---------- */
+  if (!reduceMotion) {
+    document.querySelectorAll(".project-card").forEach((card) => {
+      const glow = document.createElement("div");
+      glow.className = "card-glow";
+      card.appendChild(glow);
+      card.addEventListener("mousemove", (e) => {
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width; // 0..1 across the card
+        const py = (e.clientY - r.top) / r.height; // 0..1 down the card
+        card.style.transition = "transform 0.08s ease-out";
+        card.style.transform =
+          `perspective(1000px) rotateX(${(0.5 - py) * 6}deg) rotateY(${(px - 0.5) * 8}deg) translateY(-6px)`;
+        glow.style.setProperty("--mx", px * 100 + "%");
+        glow.style.setProperty("--my", py * 100 + "%");
+      });
+      card.addEventListener("mouseleave", () => {
+        card.style.transition = "transform 0.4s ease";
+        card.style.transform = "";
+      });
+    });
+  }
 
   /* ---------- Contact form -> delivers to inbox via Web3Forms ---------- */
   const form = document.getElementById("contact-form");
