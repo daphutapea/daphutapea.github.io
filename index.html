@@ -231,121 +231,179 @@
       <div class="section-heading" data-reveal>
         <span class="section-kicker">02 - Skills</span>
         <h2 class="section-title">My Technical Toolkit</h2>
+        <p class="section-sub">One notebook, every tool I use. Click through the tabs to explore each module.</p>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 skills-grid">
-        <!-- Card -->
-        <div class="skill-card" data-reveal>
-          <div class="skill-icon">🤖</div>
-          <h3 class="skill-title">Machine Learning &amp; AI</h3>
-          <div class="skill-tags">
-            <span class="tag">Machine Learning</span>
-            <span class="tag">Deep Learning</span>
-            <span class="tag">Computer Vision</span>
-            <span class="tag">NLP</span>
-            <span class="tag">EDA</span>
-            <span class="tag">Statistical Analysis</span>
+      <!-- The whole toolkit lives in one Jupyter-style notebook window.
+           Without JavaScript all modules simply stack; JS turns them into tabs. -->
+      <div class="nb-window mt-12" data-reveal>
+        <!-- Window chrome -->
+        <div class="nb-header">
+          <span class="nb-kernel-dot" aria-hidden="true"></span>
+          <span class="nb-title">daffa@portfolio: skills.ipynb</span>
+          <div class="nb-header-right">
+            <span class="nb-chip">kernel: python3</span>
+            <span class="nb-winbtns" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/></svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="6" width="12" height="12" rx="1"/></svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </span>
           </div>
         </div>
 
-        <div class="skill-card" data-reveal>
-          <div class="skill-icon">🧠</div>
-          <h3 class="skill-title">Generative AI &amp; LLMs</h3>
-          <div class="skill-tags">
-            <span class="tag">RAG</span>
-            <span class="tag">LLMs</span>
-            <span class="tag">LangChain</span>
-            <span class="tag">ChromaDB</span>
-            <span class="tag">Prompt Engineering</span>
-            <span class="tag">Semantic Search</span>
-            <span class="tag">LLM Evaluation</span>
-            <span class="tag">Groq</span>
+        <!-- Module tabs -->
+        <div class="nb-tabs" role="tablist" aria-label="Skill categories">
+          <button type="button" class="nb-tab" id="nb-tab-ml" role="tab" aria-selected="true" aria-controls="nb-panel-ml">🤖 ml_ai.py</button>
+          <button type="button" class="nb-tab" id="nb-tab-genai" role="tab" aria-selected="false" aria-controls="nb-panel-genai">🧠 genai_llms.py</button>
+          <button type="button" class="nb-tab" id="nb-tab-lang" role="tab" aria-selected="false" aria-controls="nb-panel-lang">💻 languages.py</button>
+          <button type="button" class="nb-tab" id="nb-tab-libs" role="tab" aria-selected="false" aria-controls="nb-panel-libs">📚 libraries.py</button>
+          <button type="button" class="nb-tab" id="nb-tab-algo" role="tab" aria-selected="false" aria-controls="nb-panel-algo">🧮 algorithms.py</button>
+          <button type="button" class="nb-tab" id="nb-tab-tech" role="tab" aria-selected="false" aria-controls="nb-panel-tech">⚙️ techniques.py</button>
+          <button type="button" class="nb-tab" id="nb-tab-tools" role="tab" aria-selected="false" aria-controls="nb-panel-tools">🚀 deployment.sh</button>
+        </div>
+
+        <!-- Notebook cells (one per module) -->
+        <div class="nb-body">
+          <div class="nb-panel" id="nb-panel-ml" role="tabpanel" aria-labelledby="nb-tab-ml">
+            <p class="nb-line"><span class="nb-prompt">In [1]:</span> <span class="nb-cmd">skills["machine_learning_ai"]</span></p>
+            <p class="nb-comment"># models that learn from data</p>
+            <div class="nb-out">
+              <span class="nb-prompt nb-out-prompt">Out[1]:</span>
+              <div class="skill-tags">
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Deep Learning</span>
+                <span class="tag">Computer Vision</span>
+                <span class="tag">NLP</span>
+                <span class="tag">EDA</span>
+                <span class="tag">Statistical Analysis</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="nb-panel" id="nb-panel-genai" role="tabpanel" aria-labelledby="nb-tab-genai">
+            <p class="nb-line"><span class="nb-prompt">In [2]:</span> <span class="nb-cmd">skills["generative_ai_llms"]</span></p>
+            <p class="nb-comment"># retrieval-augmented generation and friends</p>
+            <div class="nb-out">
+              <span class="nb-prompt nb-out-prompt">Out[2]:</span>
+              <div class="skill-tags">
+                <span class="tag">RAG</span>
+                <span class="tag">LLMs</span>
+                <span class="tag">LangChain</span>
+                <span class="tag">ChromaDB</span>
+                <span class="tag">Prompt Engineering</span>
+                <span class="tag">Semantic Search</span>
+                <span class="tag">LLM Evaluation</span>
+                <span class="tag">Groq</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="nb-panel" id="nb-panel-lang" role="tabpanel" aria-labelledby="nb-tab-lang">
+            <p class="nb-line"><span class="nb-prompt">In [3]:</span> <span class="nb-cmd">skills["languages"]</span></p>
+            <p class="nb-comment"># fluent, with type hints</p>
+            <div class="nb-out">
+              <span class="nb-prompt nb-out-prompt">Out[3]:</span>
+              <div class="skill-tags">
+                <span class="tag">Python</span>
+                <span class="tag">SQL</span>
+                <span class="tag">LaTeX</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="nb-panel" id="nb-panel-libs" role="tabpanel" aria-labelledby="nb-tab-libs">
+            <p class="nb-line"><span class="nb-prompt">In [4]:</span> <span class="nb-cmd">skills["libraries_frameworks"]</span></p>
+            <p class="nb-comment"># the stack behind the models</p>
+            <div class="nb-out">
+              <span class="nb-prompt nb-out-prompt">Out[4]:</span>
+              <div class="skill-tags">
+                <span class="tag">Scikit-Learn</span>
+                <span class="tag">TensorFlow</span>
+                <span class="tag">Keras</span>
+                <span class="tag">XGBoost</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">NumPy</span>
+                <span class="tag">Matplotlib</span>
+                <span class="tag">Seaborn</span>
+                <span class="tag">BERTopic</span>
+                <span class="tag">Transformers</span>
+                <span class="tag">Gensim</span>
+                <span class="tag">imbalanced-learn</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">Next.js</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="nb-panel" id="nb-panel-algo" role="tabpanel" aria-labelledby="nb-tab-algo">
+            <p class="nb-line"><span class="nb-prompt">In [5]:</span> <span class="nb-cmd">skills["modeling_algorithms"]</span></p>
+            <p class="nb-comment"># from regression to neural networks</p>
+            <div class="nb-out">
+              <span class="nb-prompt nb-out-prompt">Out[5]:</span>
+              <div class="skill-tags">
+                <span class="tag">Regression</span>
+                <span class="tag">Random Forest</span>
+                <span class="tag">Decision Trees</span>
+                <span class="tag">KNN</span>
+                <span class="tag">SVM</span>
+                <span class="tag">XGBoost</span>
+                <span class="tag">CNN</span>
+                <span class="tag">K-Means</span>
+                <span class="tag">LDA</span>
+                <span class="tag">HDBSCAN</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="nb-panel" id="nb-panel-tech" role="tabpanel" aria-labelledby="nb-tab-tech">
+            <p class="nb-line"><span class="nb-prompt">In [6]:</span> <span class="nb-cmd">skills["techniques"]</span></p>
+            <p class="nb-comment"># how the models get good</p>
+            <div class="nb-out">
+              <span class="nb-prompt nb-out-prompt">Out[6]:</span>
+              <div class="skill-tags">
+                <span class="tag">Feature Engineering</span>
+                <span class="tag">Hyperparameter Tuning</span>
+                <span class="tag">Cross-Validation</span>
+                <span class="tag">Transfer Learning</span>
+                <span class="tag">Image Augmentation</span>
+                <span class="tag">Topic Modeling</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="nb-panel" id="nb-panel-tools" role="tabpanel" aria-labelledby="nb-tab-tools">
+            <p class="nb-line"><span class="nb-prompt">In [7]:</span> <span class="nb-cmd">!./deployment.sh --list-tools</span></p>
+            <p class="nb-comment"># from notebook to production</p>
+            <div class="nb-out">
+              <span class="nb-prompt nb-out-prompt">Out[7]:</span>
+              <div class="skill-tags">
+                <span class="tag">Streamlit</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Hugging Face</span>
+                <span class="tag">Vercel</span>
+                <span class="tag">Git</span>
+                <span class="tag">Looker Studio</span>
+                <span class="tag">Elasticsearch</span>
+                <span class="tag">Kibana</span>
+                <span class="tag">Supabase</span>
+                <span class="tag">Microsoft Excel</span>
+                <span class="tag">Microsoft Word</span>
+                <span class="tag">Microsoft PowerPoint</span>
+                <span class="tag">Google Sheets</span>
+                <span class="tag">Google Slides</span>
+                <span class="tag">Google Docs</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="skill-card" data-reveal>
-          <div class="skill-icon">💻</div>
-          <h3 class="skill-title">Languages</h3>
-          <div class="skill-tags">
-            <span class="tag">Python</span>
-            <span class="tag">SQL</span>
-            <span class="tag">LaTeX</span>
-          </div>
+        <!-- Status bar -->
+        <div class="nb-status">
+          <span class="nb-branch">main</span>
+          <span>7 modules</span>
+          <span><span id="nb-skill-count">62</span> skills total</span>
+          <span class="nb-status-right">skills.ipynb | UTF-8 | always learning</span>
         </div>
-
-        <div class="skill-card" data-reveal>
-          <div class="skill-icon">📚</div>
-          <h3 class="skill-title">Libraries &amp; Frameworks</h3>
-          <div class="skill-tags">
-            <span class="tag">Scikit-Learn</span>
-            <span class="tag">TensorFlow</span>
-            <span class="tag">Keras</span>
-            <span class="tag">XGBoost</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">NumPy</span>
-            <span class="tag">Matplotlib</span>
-            <span class="tag">Seaborn</span>
-            <span class="tag">BERTopic</span>
-            <span class="tag">Transformers</span>
-            <span class="tag">Gensim</span>
-            <span class="tag">imbalanced-learn</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">Next.js</span>
-          </div>
-        </div>
-
-        <div class="skill-card" data-reveal>
-          <div class="skill-icon">🧮</div>
-          <h3 class="skill-title">Modeling Algorithms</h3>
-          <div class="skill-tags">
-            <span class="tag">Regression</span>
-            <span class="tag">Random Forest</span>
-            <span class="tag">Decision Trees</span>
-            <span class="tag">KNN</span>
-            <span class="tag">SVM</span>
-            <span class="tag">XGBoost</span>
-            <span class="tag">CNN</span>
-            <span class="tag">K-Means</span>
-            <span class="tag">LDA</span>
-            <span class="tag">HDBSCAN</span>
-          </div>
-        </div>
-
-        <div class="skill-card" data-reveal>
-          <div class="skill-icon">⚙️</div>
-          <h3 class="skill-title">Techniques</h3>
-          <div class="skill-tags">
-            <span class="tag">Feature Engineering</span>
-            <span class="tag">Hyperparameter Tuning</span>
-            <span class="tag">Cross-Validation</span>
-            <span class="tag">Transfer Learning</span>
-            <span class="tag">Image Augmentation</span>
-            <span class="tag">Topic Modeling</span>
-          </div>
-        </div>
-
-        <div class="skill-card" data-reveal>
-          <div class="skill-icon">🚀</div>
-          <h3 class="skill-title">Tools &amp; Deployment</h3>
-          <div class="skill-tags">
-            <span class="tag">Streamlit</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Hugging Face</span>
-            <span class="tag">Vercel</span>
-            <span class="tag">Git</span>
-            <span class="tag">Looker Studio</span>
-            <span class="tag">Elasticsearch</span>
-            <span class="tag">Kibana</span>
-            <span class="tag">Supabase</span>
-            <span class="tag">Microsoft Excel</span>
-            <span class="tag">Microsoft Word</span>
-            <span class="tag">Microsoft PowerPoint</span>
-            <span class="tag">Google Sheets</span>
-            <span class="tag">Google Slides</span>
-            <span class="tag">Google Docs</span>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>

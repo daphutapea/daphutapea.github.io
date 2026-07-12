@@ -256,6 +256,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  /* ---------- Skills notebook tabs ---------- */
+  const nbTabs = Array.from(document.querySelectorAll(".nb-tab"));
+  const nbPanels = Array.from(document.querySelectorAll(".nb-panel"));
+
+  if (nbTabs.length && nbTabs.length === nbPanels.length) {
+    const activateTab = (idx) => {
+      nbTabs.forEach((tab, i) => {
+        const on = i === idx;
+        tab.classList.toggle("active", on);
+        tab.setAttribute("aria-selected", String(on));
+        tab.tabIndex = on ? 0 : -1;
+      });
+      nbPanels.forEach((panel, i) => {
+        panel.hidden = i !== idx;
+      });
+    };
+
+    nbTabs.forEach((tab, i) => {
+      tab.addEventListener("click", () => activateTab(i));
+      // Arrow keys move between tabs, like a real editor
+      tab.addEventListener("keydown", (e) => {
+        if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+        e.preventDefault();
+        const next =
+          e.key === "ArrowRight"
+            ? (i + 1) % nbTabs.length
+            : (i - 1 + nbTabs.length) % nbTabs.length;
+        activateTab(next);
+        nbTabs[next].focus();
+      });
+    });
+
+    activateTab(0); // without JS the panels just stack; JS collapses them into tabs
+
+    // Keep the status-bar skill count honest by counting the actual pills
+    const countEl = document.getElementById("nb-skill-count");
+    if (countEl) {
+      countEl.textContent = document.querySelectorAll(".nb-panel .tag").length;
+    }
+  }
+
   /* ---------- Certificate lightbox ---------- */
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
