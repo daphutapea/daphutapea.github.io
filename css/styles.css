@@ -118,6 +118,18 @@ body { overflow-x: hidden; }
   -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 100%);
 }
 
+/* Bottom of the hero: dark purple glow slowly dissolves into the page black */
+.hero-fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 11rem;
+  z-index: 1; /* above the aurora blobs, below the hero content (z-10) */
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent 0%, rgba(10, 10, 15, 0.55) 55%, #0a0a0f 100%);
+}
+
 .cursor-blink { animation: blink 1.1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 

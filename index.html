@@ -105,7 +105,7 @@
   </header>
 
   <!-- ===================== HERO ===================== -->
-  <section id="home" class="relative min-h-screen flex items-center overflow-hidden pt-16">
+  <section id="home" class="relative min-h-screen flex items-center overflow-hidden pt-16 pb-24 md:pb-0">
     <!-- Animated aurora background -->
     <div class="aurora" aria-hidden="true">
       <span class="blob blob-1"></span>
@@ -113,8 +113,10 @@
       <span class="blob blob-3"></span>
     </div>
     <div class="grid-overlay" aria-hidden="true"></div>
+    <!-- Soft fade so the purple aurora melts into the page's black instead of a hard cut -->
+    <div class="hero-fade" aria-hidden="true"></div>
 
-    <div class="relative max-w-6xl mx-auto px-6 w-full grid md:grid-cols-[1.3fr_1fr] gap-12 items-center">
+    <div class="relative z-10 max-w-6xl mx-auto px-6 w-full grid md:grid-cols-[1.3fr_1fr] gap-12 items-center">
       <!-- Left: text -->
       <div data-reveal>
         <p class="font-mono text-accent text-sm mb-4 flex items-center gap-2">
@@ -176,7 +178,7 @@
     </div>
 
     <!-- Scroll cue -->
-    <a href="#about" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-500 hover:text-accent transition animate-bounce" aria-label="Scroll down">
+    <a href="#about" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-slate-500 hover:text-accent transition animate-bounce" aria-label="Scroll down">
       <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
     </a>
   </section>
