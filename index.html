@@ -11,6 +11,9 @@
   <meta property="og:title" content="Daffa Narendra Hutapea - Data Scientist &amp; Data Analyst" />
   <meta property="og:description" content="Machine learning, deep learning, computer vision & NLP projects by a UI Mathematics + Hacktiv8 Data Science graduate." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://daphutapea.github.io/" />
+  <meta property="og:image" content="https://daphutapea.github.io/assets/og-preview.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Favicon: a simple gradient "D" drawn inline so no extra file is needed -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%238b5cf6'/><stop offset='1' stop-color='%2322d3ee'/></linearGradient></defs><rect width='100' height='100' rx='24' fill='url(%23g)'/><text x='50' y='70' font-size='60' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>D</text></svg>" />
@@ -73,6 +76,7 @@
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#certificates" class="nav-link">Certificates</a></li>
         <li>
           <a href="#contact" class="px-4 py-2 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-lg hover:shadow-primary/30 transition">
             Contact
@@ -94,6 +98,7 @@
         <li><a href="#projects" class="mobile-link block">Projects</a></li>
         <li><a href="#experience" class="mobile-link block">Experience</a></li>
         <li><a href="#education" class="mobile-link block">Education</a></li>
+        <li><a href="#certificates" class="mobile-link block">Certificates</a></li>
         <li><a href="#contact" class="mobile-link block text-gradient font-semibold">Contact</a></li>
       </ul>
     </div>
@@ -610,11 +615,50 @@
     </div>
   </section>
 
+  <!-- ===================== CERTIFICATES ===================== -->
+  <section id="certificates" class="py-24 sm:py-32 bg-surface/40 border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-heading" data-reveal>
+        <span class="section-kicker">06 - Certificates</span>
+        <h2 class="section-title">Certificates &amp; Credentials</h2>
+        <p class="section-sub">The paper trail behind the numbers. Click a certificate to view it in full.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mt-12">
+        <!-- Hacktiv8 graduation certificate -->
+        <figure class="cred-card" data-reveal>
+          <button type="button" class="cred-frame" data-lightbox="assets/hacktiv8-certificate.jpg" aria-label="View the Hacktiv8 graduation certificate in full">
+            <img src="assets/hacktiv8-certificate.jpg" alt="Hacktiv8 Certificate of Graduation - Full Time Data Science, predicate Honors" loading="lazy" />
+            <span class="cred-zoom">Click to enlarge</span>
+          </button>
+          <figcaption class="cred-info">
+            <span class="cred-badge">Predicate: Honors</span>
+            <h3 class="cred-name">Certificate of Graduation - Full Time Data Science</h3>
+            <p class="cred-meta">Hacktiv8 Indonesia - Issued Jul 2026</p>
+          </figcaption>
+        </figure>
+
+        <!-- LBI FIB UI English proficiency certificate -->
+        <figure class="cred-card" data-reveal>
+          <button type="button" class="cred-frame" data-lightbox="assets/english-proficiency-certificate.jpg" aria-label="View the English Proficiency Test certificate in full">
+            <img src="assets/english-proficiency-certificate.jpg" alt="English Proficiency Test certificate - score 570, grade A - LBI FIB Universitas Indonesia" loading="lazy" />
+            <span class="cred-zoom">Click to enlarge</span>
+          </button>
+          <figcaption class="cred-info">
+            <span class="cred-badge">Score: 570 (TOEFL ITP Equivalent) - Grade A</span>
+            <h3 class="cred-name">English Proficiency Test (EPT)</h3>
+            <p class="cred-meta">LBI FIB, Universitas Indonesia - Issued Oct 2022</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== CONTACT ===================== -->
-  <section id="contact" class="py-24 sm:py-32 bg-surface/40 border-t border-white/5">
+  <section id="contact" class="py-24 sm:py-32">
     <div class="max-w-5xl mx-auto px-6">
       <div class="section-heading text-center" data-reveal>
-        <span class="section-kicker justify-center">06 - Contact</span>
+        <span class="section-kicker justify-center">07 - Contact</span>
         <h2 class="section-title">Let's Work Together!</h2>
         <p class="section-sub mx-auto">
           I'm open to Graduate Trainee, Data Scientist, and Data Analyst opportunities. Have a project or role in mind? I'd love to hear from you.
@@ -718,6 +762,14 @@
   <button id="to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-surface-2 border border-white/10 text-white grid place-items-center opacity-0 pointer-events-none transition-all hover:bg-primary">
     <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 15l-6-6-6 6"/></svg>
   </button>
+
+  <!-- Certificate lightbox (hidden until a certificate is clicked) -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Certificate preview">
+    <button id="lightbox-close" class="lightbox-close" aria-label="Close preview">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <img id="lightbox-img" src="" alt="Certificate full view" />
+  </div>
 
   <!-- Lenis: buttery smooth scrolling (loaded from CDN, no build step) -->
   <script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>

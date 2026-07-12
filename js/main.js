@@ -256,6 +256,40 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  /* ---------- Certificate lightbox ---------- */
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxClose = document.getElementById("lightbox-close");
+
+  if (lightbox && lightboxImg) {
+    const openLightbox = (src, alt) => {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || "Certificate full view";
+      lightbox.classList.add("open");
+      document.body.style.overflow = "hidden"; // freeze the page behind
+      if (lenis) lenis.stop();
+    };
+    const closeLightbox = () => {
+      lightbox.classList.remove("open");
+      document.body.style.overflow = "";
+      if (lenis) lenis.start();
+    };
+
+    document.querySelectorAll("[data-lightbox]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const preview = btn.querySelector("img");
+        openLightbox(btn.getAttribute("data-lightbox"), preview && preview.alt);
+      });
+    });
+    lightboxClose?.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox(); // click on the dark backdrop
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightbox.classList.contains("open")) closeLightbox();
+    });
+  }
+
   /* ---------- Contact form -> delivers to inbox via Web3Forms ---------- */
   const form = document.getElementById("contact-form");
   const formStatus = document.getElementById("form-status");

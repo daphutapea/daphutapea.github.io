@@ -9,3 +9,11 @@ Desktop.ini
 
 # Large original photo — the site ships the optimized assets/profile.jpg instead
 assets/Daffa Hutapea Profile.jpg
+
+# Original certificate scans and screenshots - the site ships optimized copies
+assets/Hacktiv8 Certificate-Daffa Narendra Hutapea.jpg
+assets/Sertifikasi MPK Inggris_Daffa Narendra Hutapea.jpg
+assets/Website Interface.png
+
+# Local archives
+*.zip
