@@ -7,6 +7,9 @@
 
 :root {
   --grad: linear-gradient(135deg, #8b5cf6 0%, #d946ef 50%, #22d3ee 100%);
+  /* VS Code's editor font stack (Cascadia/Consolas on Windows), falling
+     back to JetBrains Mono which the site already loads for everyone. */
+  --code-font: "Cascadia Code", "Cascadia Mono", Consolas, "JetBrains Mono", monospace;
 }
 
 /* Smooth-scroll offset so the sticky navbar doesn't cover headings */
@@ -355,23 +358,30 @@ body { overflow-x: hidden; }
   background: rgba(34, 211, 238, 0.05);
 }
 
-.nb-body { padding: 1.4rem 1.5rem 1.6rem; min-height: 230px; }
+/* The cell area sits on VS Code's editor canvas color (#1e1e1e) */
+.nb-body { padding: 1.4rem 1.5rem 1.6rem; min-height: 230px; background: #1e1e1e; }
 .nb-line { display: flex; gap: 0.6rem; align-items: baseline; flex-wrap: wrap; }
 .nb-prompt {
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--code-font);
   font-size: 0.78rem;
-  color: #8b5cf6;
+  color: #569cd6; /* Jupyter "In [n]:" blue */
   white-space: nowrap;
   flex-shrink: 0;
 }
-.nb-out-prompt { color: #d946ef; }
-.nb-cmd { font-family: "JetBrains Mono", monospace; font-size: 0.82rem; color: #e2e8f0; }
+.nb-out-prompt { color: #e8824a; } /* Jupyter "Out[n]:" orange */
+.nb-cmd { font-family: var(--code-font); font-size: 0.82rem; color: #d4d4d4; }
 .nb-comment {
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--code-font);
   font-size: 0.73rem;
-  color: #475569;
+  color: #6a9955; /* VS Code Dark+ comment green */
   margin: 0.4rem 0 1.1rem;
 }
+/* VS Code Dark+ Python token colors */
+.tok-var { color: #9cdcfe; }  /* variables / parameters */
+.tok-str { color: #ce9178; }  /* strings */
+.tok-brkt { color: #ffd700; } /* bracket-pair gold */
+.tok-kw { color: #c586c0; }   /* keywords / magics */
+.tok-fn { color: #dcdcaa; }   /* function & script names */
 .nb-out { display: flex; gap: 0.6rem; align-items: flex-start; }
 
 .nb-status {
