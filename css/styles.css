@@ -745,6 +745,66 @@ body { overflow-x: hidden; }
 }
 .lightbox-close:hover { background: rgba(139, 92, 246, 0.45); }
 
+/* Certificate carousel: one card centered, neighbors peeking + dimmed */
+.cert-carousel { position: relative; }
+.cc-viewport { overflow: hidden; }
+.cc-track {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+.cc-slide { flex: 0 0 auto; width: min(600px, 82vw); }
+.cc-slide .cred-card {
+  height: 100%;
+  opacity: 0.35;
+  transform: scale(0.93);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.cc-slide.is-active .cred-card { opacity: 1; transform: scale(1); }
+.cc-slide:not(.is-active) .cred-card { pointer-events: none; } /* only the active card is interactive */
+
+.cc-arrow {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(18, 18, 28, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: background 0.2s, border-color 0.2s;
+}
+.cc-arrow:hover { background: rgba(139, 92, 246, 0.5); border-color: rgba(139, 92, 246, 0.6); }
+.cc-prev { left: 0; }
+.cc-next { right: 0; }
+
+.cc-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.75rem; }
+.cc-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: width 0.3s, background 0.3s;
+}
+.cc-dot.is-active { width: 26px; background: #22d3ee; }
+
+@media (max-width: 640px) {
+  .cc-slide { width: 86vw; }
+  .cc-arrow { width: 40px; height: 40px; top: 36%; }
+  .cc-prev { left: -0.35rem; }
+  .cc-next { right: -0.35rem; }
+}
+
 /* ---------------- CONTACT ---------------- */
 .contact-row {
   display: flex;

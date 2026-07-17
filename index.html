@@ -681,35 +681,84 @@
       <div class="section-heading" data-reveal>
         <span class="section-kicker">06 - Certificates</span>
         <h2 class="section-title">Certificates &amp; Credentials</h2>
-        <p class="section-sub">The paper trail behind the numbers. Click a certificate to view it in full.</p>
+        <p class="section-sub">The paper trail behind the numbers. Tap through with the arrows, and click any certificate to view it in full.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8 mt-12">
-        <!-- Hacktiv8 graduation certificate -->
-        <figure class="cred-card" data-reveal>
-          <button type="button" class="cred-frame" data-lightbox="assets/hacktiv8-certificate.jpg" aria-label="View the Hacktiv8 graduation certificate in full">
-            <img src="assets/hacktiv8-certificate.jpg" alt="Hacktiv8 Certificate of Graduation - Full Time Data Science, predicate Honors" loading="lazy" />
-            <span class="cred-zoom">Click to enlarge</span>
-          </button>
-          <figcaption class="cred-info">
-            <span class="cred-badge">Predicate: Honors</span>
-            <h3 class="cred-name">Certificate of Graduation - Full Time Data Science</h3>
-            <p class="cred-meta">Hacktiv8 Indonesia - Issued Jul 2026</p>
-          </figcaption>
-        </figure>
+      <div class="cert-carousel mt-12" data-reveal>
+        <div class="cc-viewport">
+          <div class="cc-track" id="cert-track">
 
-        <!-- LBI FIB UI English proficiency certificate -->
-        <figure class="cred-card" data-reveal>
-          <button type="button" class="cred-frame" data-lightbox="assets/english-proficiency-certificate.jpg" aria-label="View the English Proficiency Test certificate in full">
-            <img src="assets/english-proficiency-certificate.jpg" alt="English Proficiency Test certificate - score 570, grade A - LBI FIB Universitas Indonesia" loading="lazy" />
-            <span class="cred-zoom">Click to enlarge</span>
-          </button>
-          <figcaption class="cred-info">
-            <span class="cred-badge">Score: 570 (TOEFL ITP Equivalent) - Grade A</span>
-            <h3 class="cred-name">English Proficiency Test (EPT)</h3>
-            <p class="cred-meta">LBI FIB, Universitas Indonesia - Issued Oct 2022</p>
-          </figcaption>
-        </figure>
+            <!-- 1. Hacktiv8 graduation certificate -->
+            <div class="cc-slide">
+              <figure class="cred-card">
+                <button type="button" class="cred-frame" data-lightbox="assets/hacktiv8-certificate.jpg" aria-label="View the Hacktiv8 graduation certificate in full">
+                  <img src="assets/hacktiv8-certificate.jpg" alt="Hacktiv8 Certificate of Graduation - Full Time Data Science, predicate Honors" loading="lazy" />
+                  <span class="cred-zoom">Click to enlarge</span>
+                </button>
+                <figcaption class="cred-info">
+                  <span class="cred-badge">Predicate: Honors</span>
+                  <h3 class="cred-name">Certificate of Graduation - Full Time Data Science</h3>
+                  <p class="cred-meta">Hacktiv8 Indonesia - Issued Jul 2026</p>
+                </figcaption>
+              </figure>
+            </div>
+
+            <!-- 2. HackerRank Problem Solving (Basic) -->
+            <div class="cc-slide">
+              <figure class="cred-card">
+                <button type="button" class="cred-frame" data-lightbox="assets/hackerrank-problem-solving-certificate.jpg" aria-label="View the HackerRank Problem Solving certificate in full">
+                  <img src="assets/hackerrank-problem-solving-certificate.jpg" alt="HackerRank Certificate of Accomplishment - Problem Solving (Basic)" loading="lazy" />
+                  <span class="cred-zoom">Click to enlarge</span>
+                </button>
+                <figcaption class="cred-info">
+                  <span class="cred-badge">Skill Certification - Passed</span>
+                  <h3 class="cred-name">Problem Solving (Basic)</h3>
+                  <p class="cred-meta">HackerRank - Issued Jul 2026</p>
+                </figcaption>
+              </figure>
+            </div>
+
+            <!-- 3. Kimia Farma Big Data Analytics internship -->
+            <div class="cc-slide">
+              <figure class="cred-card">
+                <button type="button" class="cred-frame" data-lightbox="assets/kimia-farma-internship-certificate.jpg" aria-label="View the Kimia Farma Big Data Analytics internship certificate in full">
+                  <img src="assets/kimia-farma-internship-certificate.jpg" alt="Kimia Farma Big Data Analytics Project-Based Internship - Certificate of Achievement" loading="lazy" />
+                  <span class="cred-zoom">Click to enlarge</span>
+                </button>
+                <figcaption class="cred-info">
+                  <span class="cred-badge">Score: 84.67 - Excellent</span>
+                  <h3 class="cred-name">Big Data Analytics Project-Based Internship</h3>
+                  <p class="cred-meta">Kimia Farma x Rakamin Academy - Jul 2024</p>
+                </figcaption>
+              </figure>
+            </div>
+
+            <!-- 4. LBI FIB UI English proficiency certificate -->
+            <div class="cc-slide">
+              <figure class="cred-card">
+                <button type="button" class="cred-frame" data-lightbox="assets/english-proficiency-certificate.jpg" aria-label="View the English Proficiency Test certificate in full">
+                  <img src="assets/english-proficiency-certificate.jpg" alt="English Proficiency Test certificate - score 570, grade A - LBI FIB Universitas Indonesia" loading="lazy" />
+                  <span class="cred-zoom">Click to enlarge</span>
+                </button>
+                <figcaption class="cred-info">
+                  <span class="cred-badge">Score: 570 (TOEFL ITP Equivalent) - Grade A</span>
+                  <h3 class="cred-name">English Proficiency Test (EPT)</h3>
+                  <p class="cred-meta">LBI FIB, Universitas Indonesia - Issued Oct 2022</p>
+                </figcaption>
+              </figure>
+            </div>
+
+          </div>
+        </div>
+
+        <button type="button" class="cc-arrow cc-prev" aria-label="Previous certificate">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button type="button" class="cc-arrow cc-next" aria-label="Next certificate">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+
+        <div class="cc-dots" id="cert-dots" role="tablist" aria-label="Certificate navigation"></div>
       </div>
     </div>
   </section>

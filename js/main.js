@@ -331,6 +331,54 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  /* ---------- Certificate carousel ---------- */
+  const certTrack = document.getElementById("cert-track");
+  const certDots = document.getElementById("cert-dots");
+  if (certTrack && certDots) {
+    const slides = Array.from(certTrack.children);
+    const viewport = certTrack.parentElement;
+    const prevBtn = document.querySelector(".cc-prev");
+    const nextBtn = document.querySelector(".cc-next");
+    let active = 0;
+
+    // Center the active slide in the viewport; light up its dot
+    const go = (i) => {
+      active = (i + slides.length) % slides.length;
+      const slide = slides[active];
+      const offset = slide.offsetLeft - (viewport.clientWidth - slide.offsetWidth) / 2;
+      certTrack.style.transform = `translateX(${-offset}px)`;
+      slides.forEach((s, j) => s.classList.toggle("is-active", j === active));
+      dots.forEach((d, j) => d.classList.toggle("is-active", j === active));
+    };
+
+    // Build one dot per certificate
+    slides.forEach((_, i) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "cc-dot";
+      dot.setAttribute("aria-label", `Go to certificate ${i + 1}`);
+      dot.addEventListener("click", () => go(i));
+      certDots.appendChild(dot);
+    });
+    const dots = Array.from(certDots.children);
+
+    prevBtn?.addEventListener("click", () => go(active - 1));
+    nextBtn?.addEventListener("click", () => go(active + 1));
+
+    // Swipe on touch devices
+    let startX = null;
+    viewport.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; }, { passive: true });
+    viewport.addEventListener("touchend", (e) => {
+      if (startX === null) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) go(active + (dx < 0 ? 1 : -1));
+      startX = null;
+    });
+
+    go(0);
+    window.addEventListener("resize", () => go(active), { passive: true });
+  }
+
   /* ---------- Contact form -> delivers to inbox via Web3Forms ---------- */
   const form = document.getElementById("contact-form");
   const formStatus = document.getElementById("form-status");
