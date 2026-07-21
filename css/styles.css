@@ -440,6 +440,68 @@ body { overflow-x: hidden; }
   .nb-status-right { margin-left: 0; }
 }
 
+/* ---------------- SOFT SKILLS (warm trait cards; the human side of Skills) ---------------- */
+.soft-kicker {
+  display: inline-block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  color: #d946ef;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.6rem;
+}
+.soft-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+.soft-sub { margin-top: 0.75rem; max-width: 44rem; color: #94a3b8; font-size: 1rem; line-height: 1.6; }
+
+.soft-card {
+  position: relative;
+  background: #12121c;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 1.25rem;
+  padding: 1.5rem 1.5rem 1.6rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.soft-card::before { /* gradient accent bar down the left edge */
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--grad);
+  opacity: 0.65;
+  transition: opacity 0.3s;
+}
+.soft-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 20px 40px -22px rgba(139, 92, 246, 0.4);
+}
+.soft-card:hover::before { opacity: 1; }
+.soft-ic {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 0.85rem;
+  font-size: 1.45rem;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.22), rgba(34, 211, 238, 0.16));
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  margin-bottom: 1rem;
+}
+.soft-name {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 0.45rem;
+}
+.soft-desc { color: #94a3b8; font-size: 0.92rem; line-height: 1.6; }
+
 /* ---------------- PROJECT CARDS ---------------- */
 .project-card {
   background: #12121c;
