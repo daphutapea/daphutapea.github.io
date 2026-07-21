@@ -70,9 +70,10 @@
       </a>
 
       <!-- Desktop links -->
-      <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <ul class="hidden lg:flex items-center gap-6 text-sm font-medium">
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#education" class="nav-link">Education</a></li>
@@ -85,16 +86,17 @@
       </ul>
 
       <!-- Mobile hamburger -->
-      <button id="menu-btn" aria-label="Open menu" class="md:hidden text-white p-2">
+      <button id="menu-btn" aria-label="Open menu" class="lg:hidden text-white p-2">
         <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h18M4 13h18M4 19h18"/></svg>
       </button>
     </nav>
 
     <!-- Mobile menu -->
-    <div id="mobile-menu" class="md:hidden hidden bg-surface/95 backdrop-blur-lg border-t border-white/5">
+    <div id="mobile-menu" class="lg:hidden hidden bg-surface/95 backdrop-blur-lg border-t border-white/5">
       <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-medium">
         <li><a href="#about" class="mobile-link block">About</a></li>
         <li><a href="#skills" class="mobile-link block">Skills</a></li>
+        <li><a href="#services" class="mobile-link block">Services</a></li>
         <li><a href="#projects" class="mobile-link block">Projects</a></li>
         <li><a href="#experience" class="mobile-link block">Experience</a></li>
         <li><a href="#education" class="mobile-link block">Education</a></li>
@@ -408,6 +410,11 @@
         </div>
       </div>
 
+      <!-- Tech-stack logo strip (auto-scrolling monochrome marquee; filled by JS) -->
+      <div class="logo-marquee mt-14" data-reveal>
+        <div class="logo-track" id="logo-track"></div>
+      </div>
+
       <!-- ===== Soft skills: deliberately warmer than the code notebook above ===== -->
       <div class="soft-skills mt-16">
         <div class="soft-heading" data-reveal>
@@ -452,11 +459,55 @@
     </div>
   </section>
 
+  <!-- ===================== SERVICES / WHAT I DO ===================== -->
+  <section id="services" class="py-24 sm:py-32">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="section-heading" data-reveal>
+        <span class="section-kicker">03 - Services</span>
+        <h2 class="section-title">What I Do</h2>
+        <p class="section-sub">End-to-end data science - from the first look at raw data to a deployed, interactive app.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        <div class="service-card" data-reveal>
+          <div class="service-ic">📊</div>
+          <h3 class="service-name">Data Analysis &amp; EDA</h3>
+          <p class="service-desc">Dig into raw, messy datasets to surface the trends, patterns, and stories that inform real decisions.</p>
+        </div>
+        <div class="service-card" data-reveal>
+          <div class="service-ic">📈</div>
+          <h3 class="service-name">Data Visualization</h3>
+          <p class="service-desc">Clear, interactive dashboards and charts (Streamlit, Looker Studio, Matplotlib) that make findings obvious at a glance.</p>
+        </div>
+        <div class="service-card" data-reveal>
+          <div class="service-ic">🤖</div>
+          <h3 class="service-name">Machine Learning</h3>
+          <p class="service-desc">End-to-end classification and regression - feature engineering, benchmarking algorithms, and tuning the winner.</p>
+        </div>
+        <div class="service-card" data-reveal>
+          <div class="service-ic">👁️</div>
+          <h3 class="service-name">Deep Learning &amp; Computer Vision</h3>
+          <p class="service-desc">Neural networks and transfer learning for image tasks - like my satellite land-use classifier at 97.1% accuracy.</p>
+        </div>
+        <div class="service-card" data-reveal>
+          <div class="service-ic">💬</div>
+          <h3 class="service-name">NLP &amp; Generative AI</h3>
+          <p class="service-desc">Text understanding (topic modeling, sentiment) and RAG chatbots grounded in your own data, with citations.</p>
+        </div>
+        <div class="service-card" data-reveal>
+          <div class="service-ic">🚀</div>
+          <h3 class="service-name">Deployment &amp; MLOps</h3>
+          <p class="service-desc">Ship models as live, interactive web apps with Docker, Hugging Face, FastAPI, and Vercel - not just notebooks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== PROJECTS ===================== -->
   <section id="projects" class="py-24 sm:py-32">
     <div class="max-w-6xl mx-auto px-6">
       <div class="section-heading" data-reveal>
-        <span class="section-kicker">03 - Projects</span>
+        <span class="section-kicker">04 - Projects</span>
         <h2 class="section-title">Featured Work</h2>
         <p class="section-sub">End-to-end projects, each deployed as a live, interactive web app.</p>
       </div>
@@ -597,7 +648,7 @@
   <section id="experience" class="py-24 sm:py-32 bg-surface/40 border-y border-white/5">
     <div class="max-w-6xl mx-auto px-6">
       <div class="section-heading" data-reveal>
-        <span class="section-kicker">04 - Experience</span>
+        <span class="section-kicker">05 - Experience</span>
         <h2 class="section-title">Where I Have Worked &amp; Led</h2>
       </div>
 
@@ -664,7 +715,7 @@
   <section id="education" class="py-24 sm:py-32">
     <div class="max-w-6xl mx-auto px-6">
       <div class="section-heading" data-reveal>
-        <span class="section-kicker">05 - Education</span>
+        <span class="section-kicker">06 - Education</span>
         <h2 class="section-title">Academic Background</h2>
       </div>
 
@@ -721,7 +772,7 @@
   <section id="certificates" class="py-24 sm:py-32 bg-surface/40 border-y border-white/5">
     <div class="max-w-6xl mx-auto px-6">
       <div class="section-heading" data-reveal>
-        <span class="section-kicker">06 - Certificates</span>
+        <span class="section-kicker">07 - Certificates</span>
         <h2 class="section-title">Certificates &amp; Credentials</h2>
         <p class="section-sub">The paper trail behind the numbers. Tap through with the arrows, and click any certificate to view it in full.</p>
       </div>
@@ -809,7 +860,7 @@
   <section id="contact" class="py-24 sm:py-32">
     <div class="max-w-5xl mx-auto px-6">
       <div class="section-heading text-center" data-reveal>
-        <span class="section-kicker justify-center">07 - Contact</span>
+        <span class="section-kicker justify-center">08 - Contact</span>
         <h2 class="section-title">Let's Work Together!</h2>
         <p class="section-sub mx-auto">
           I'm open to Graduate Trainee, Data Scientist, and Data Analyst opportunities. Have a project or role in mind? I'd love to hear from you.

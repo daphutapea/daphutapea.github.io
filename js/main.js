@@ -297,6 +297,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  /* ---------- Tech-stack logo marquee ---------- */
+  const logoTrack = document.getElementById("logo-track");
+  if (logoTrack) {
+    const logos = [
+      ["python", "Python"], ["pandas", "pandas"], ["numpy", "NumPy"],
+      ["scikitlearn", "scikit-learn"], ["tensorflow", "TensorFlow"], ["keras", "Keras"],
+      ["pytorch", "PyTorch"], ["jupyter", "Jupyter"], ["googlecolab", "Google Colab"],
+      ["plotly", "Plotly"], ["huggingface", "Hugging Face"], ["langchain", "LangChain"],
+      ["streamlit", "Streamlit"], ["fastapi", "FastAPI"], ["nextdotjs", "Next.js"],
+      ["docker", "Docker"], ["vercel", "Vercel"], ["git", "Git"], ["github", "GitHub"],
+      ["postgresql", "PostgreSQL"], ["supabase", "Supabase"],
+      ["elasticsearch", "Elasticsearch"], ["kibana", "Kibana"],
+    ];
+    const build = () =>
+      logos
+        .map(
+          ([slug, name]) =>
+            `<img class="tech-logo" src="https://cdn.simpleicons.org/${slug}/cbd5e1" alt="${name}" loading="lazy" />`
+        )
+        .join("");
+    // Duplicate the set so the CSS -50% translate loops seamlessly
+    logoTrack.innerHTML = build() + build();
+  }
+
   /* ---------- Certificate lightbox ---------- */
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
