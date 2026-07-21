@@ -314,11 +314,34 @@ document.addEventListener("DOMContentLoaded", () => {
       logos
         .map(
           ([slug, name]) =>
-            `<img class="tech-logo" src="https://cdn.simpleicons.org/${slug}/cbd5e1" alt="${name}" loading="lazy" />`
+            `<span class="tech-item"><img class="tech-logo" src="https://cdn.simpleicons.org/${slug}/cbd5e1" alt="${name}" loading="lazy" /><span class="tech-tip">${name}</span></span>`
         )
         .join("");
     // Duplicate the set so the CSS -50% translate loops seamlessly
     logoTrack.innerHTML = build() + build();
+
+    // Desktop reveals the name bubble on hover (CSS). On touch, tapping a logo
+    // opens its bubble and pauses the marquee so the logo stays put; tapping the
+    // same logo, another logo, or empty space closes it.
+    const closeTips = () => {
+      logoTrack
+        .querySelectorAll(".tech-item.is-open")
+        .forEach((el) => el.classList.remove("is-open"));
+      logoTrack.classList.remove("paused");
+    };
+    logoTrack.addEventListener("click", (e) => {
+      const item = e.target.closest(".tech-item");
+      if (!item) return;
+      const wasOpen = item.classList.contains("is-open");
+      closeTips();
+      if (!wasOpen) {
+        item.classList.add("is-open");
+        logoTrack.classList.add("paused");
+      }
+    });
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".tech-item")) closeTips();
+    });
   }
 
   /* ---------- Certificate lightbox ---------- */

@@ -558,6 +558,8 @@ body { overflow-x: hidden; }
 /* ---------------- TECH-STACK LOGO MARQUEE ---------------- */
 .logo-marquee {
   overflow: hidden;
+  /* Top padding leaves room for the name bubble to sit above a logo without being clipped */
+  padding: 3rem 0 0.75rem;
   -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
   mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
 }
@@ -568,19 +570,64 @@ body { overflow-x: hidden; }
   width: max-content;
   animation: logo-scroll 48s linear infinite;
 }
-.logo-marquee:hover .logo-track { animation-play-state: paused; }
+.logo-marquee:hover .logo-track,
+.logo-track.paused { animation-play-state: paused; }
 @keyframes logo-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+.tech-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+}
 .tech-logo {
   height: 34px;
   width: auto;
-  flex-shrink: 0;
   opacity: 0.45;
   transition: opacity 0.3s, transform 0.3s;
 }
-.tech-logo:hover { opacity: 1; transform: scale(1.15); }
+.tech-item:hover .tech-logo,
+.tech-item.is-open .tech-logo { opacity: 1; transform: scale(1.15); }
+
+/* Name bubble - matches the floating badges on the hero photo */
+.tech-tip {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  white-space: nowrap;
+  background: rgba(26, 26, 43, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+  font-family: var(--code-font, monospace);
+  font-size: 0.72rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 99px;
+  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 5;
+}
+.tech-tip::after { /* little caret pointing down to the logo */
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: rgba(26, 26, 43, 0.95);
+}
+.tech-item:hover .tech-tip,
+.tech-item.is-open .tech-tip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
 @media (prefers-reduced-motion: reduce) {
   .logo-track {
     animation: none;
