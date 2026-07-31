@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ---------- Interactive project cards: 3D tilt + cursor-following glow ---------- */
   if (!reduceMotion) {
-    document.querySelectorAll(".project-card").forEach((card) => {
+    document.querySelectorAll(".project-card:not(.project-featured)").forEach((card) => {
       const glow = document.createElement("div");
       glow.className = "card-glow";
       card.appendChild(glow);
@@ -366,7 +366,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("[data-lightbox]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const preview = btn.querySelector("img");
-        openLightbox(btn.getAttribute("data-lightbox"), preview && preview.alt);
+        openLightbox(
+          btn.getAttribute("data-lightbox"),
+          (preview && preview.alt) || btn.getAttribute("data-lightbox-alt")
+        );
       });
     });
     lightboxClose?.addEventListener("click", closeLightbox);

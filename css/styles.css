@@ -744,6 +744,66 @@ body { overflow-x: hidden; }
   transition: background 0.25s, gap 0.25s;
 }
 .project-link-primary:hover { background: rgba(139, 92, 246, 0.25); gap: 0.7rem; }
+.project-link-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  padding: 0.55rem 1.1rem;
+  border-radius: 99px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: color 0.25s, border-color 0.25s, gap 0.25s;
+}
+.project-link-secondary:hover { color: #fff; border-color: rgba(139, 92, 246, 0.5); gap: 0.7rem; }
+
+/* ---------------- FEATURED PROJECT (clustering + dashboard) ---------------- */
+.project-featured .featured-grid {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+}
+/* Dashboard framed like the certificate viewer, click to enlarge */
+.dash-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  padding: 1.25rem;
+  background: #0d0d15;
+  border: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  cursor: zoom-in;
+  overflow: hidden;
+}
+.dash-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0.4rem;
+  transition: transform 0.35s ease;
+}
+.dash-frame:hover img { transform: scale(1.02); }
+.dash-frame:hover .cred-zoom,
+.dash-frame:focus-visible .cred-zoom { opacity: 1; }
+.featured-body { display: flex; flex-direction: column; justify-content: center; }
+.project-category-inline {
+  display: inline-block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  color: #22d3ee;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.7rem;
+}
+@media (max-width: 900px) {
+  .project-featured .featured-grid { grid-template-columns: 1fr; }
+  .dash-frame {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    min-height: 240px;
+  }
+}
 
 /* ---------------- TIMELINE ---------------- */
 .timeline { position: relative; padding-left: 2rem; }
