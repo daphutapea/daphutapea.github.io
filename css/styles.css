@@ -275,9 +275,10 @@ body { overflow-x: hidden; }
   }
 }
 
-/* Center a lone third project card on large screens (2-column grid). */
+/* Center a lone last regular project card on large screens (2-column grid).
+   The full-width featured card is excluded - it should always span both columns. */
 @media (min-width: 1024px) {
-  .projects-grid > .project-card:last-child:nth-child(2n - 1) {
+  .projects-grid > .project-card:last-child:nth-child(2n - 1):not(.project-featured) {
     grid-column: 1 / -1;
     max-width: calc(50% - 1rem);
     margin-inline: auto;
