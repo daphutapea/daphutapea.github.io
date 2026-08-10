@@ -59,5 +59,5 @@ The update goes live about a minute later.
 - Colors, fonts, and animations: `css/styles.css`, plus the Tailwind config block at the top of `index.html`
 - Rotating hero titles: the `roles` array in `js/main.js`
 - Profile photo: `assets/profile.jpg`, referenced from the hero in `index.html`
-- CV file: `assets/Daffa_Narendra_Hutapea_CV.pdf`, linked from the Download CV buttons
+- CV files: two versions in `assets/` -- `CV - Daffa Narendra Hutapea - Data Analyst.pdf` and `... - Data Scientist.pdf`. The hero button opens a menu to choose one; the contact section links both directly. Source LaTeX lives in `CV - Daffa Narendra Hutapea/`
 - Contact form delivery: the Web3Forms access key in the contact form's hidden `access_key` field

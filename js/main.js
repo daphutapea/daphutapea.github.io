@@ -297,6 +297,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  /* ---------- CV download menu (hero) ---------- */
+  const cvMenu = document.querySelector(".cv-menu");
+  if (cvMenu) {
+    const cvTrigger = cvMenu.querySelector(".cv-trigger");
+    const closeCv = () => {
+      cvMenu.classList.remove("open");
+      cvTrigger.setAttribute("aria-expanded", "false");
+    };
+    cvTrigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = cvMenu.classList.toggle("open");
+      cvTrigger.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    // Close on outside click, on Escape, and once a version is picked
+    document.addEventListener("click", (e) => {
+      if (!cvMenu.contains(e.target)) closeCv();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeCv();
+    });
+    cvMenu.querySelectorAll(".cv-opt").forEach((opt) => {
+      opt.addEventListener("click", closeCv);
+    });
+  }
+
   /* ---------- Tech-stack logo marquee ---------- */
   const logoTrack = document.getElementById("logo-track");
   if (logoTrack) {

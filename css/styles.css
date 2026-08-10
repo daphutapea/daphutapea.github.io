@@ -188,6 +188,69 @@ body { overflow-x: hidden; }
   50% { transform: translateY(-12px); }
 }
 
+/* ---------------- CV DOWNLOAD (two versions) ---------------- */
+/* Hero: one button that opens a small menu, so the CTA row stays uncluttered */
+.cv-menu { position: relative; }
+.cv-caret { transition: transform 0.25s ease; }
+.cv-menu.open .cv-caret { transform: rotate(180deg); }
+.cv-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 60;
+  min-width: 265px;
+  padding: 0.4rem;
+  background: #12121c;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 24px 50px -18px rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+.cv-menu.open .cv-panel { opacity: 1; visibility: visible; transform: translateY(0); }
+.cv-opt {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: 0.75rem;
+  transition: background 0.2s ease;
+}
+.cv-opt:hover { background: rgba(34, 211, 238, 0.1); }
+.cv-opt-ic { font-size: 1.25rem; line-height: 1; }
+.cv-opt-text { display: block; }
+.cv-opt-title { display: block; color: #fff; font-weight: 600; font-size: 0.95rem; }
+.cv-opt-sub { display: block; color: #94a3b8; font-size: 0.78rem; margin-top: 0.1rem; }
+
+/* Contact: both versions shown outright - the visitor is already deciding here */
+.cv-dual-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.03em;
+}
+.cv-dual-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(34, 211, 238, 0.4);
+  color: #22d3ee;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: background 0.25s, border-color 0.25s, transform 0.25s;
+}
+.cv-dual-btn:hover {
+  background: rgba(34, 211, 238, 0.1);
+  border-color: rgba(34, 211, 238, 0.7);
+  transform: translateY(-2px);
+}
+
 .social-icon {
   color: #94a3b8;
   transition: color 0.25s, transform 0.25s;
