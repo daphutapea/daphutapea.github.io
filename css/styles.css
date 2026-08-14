@@ -228,7 +228,7 @@ body { overflow-x: hidden; }
 .cv-dual-label {
   font-family: "JetBrains Mono", monospace;
   font-size: 0.75rem;
-  color: #64748b;
+  color: #7788a0;
   margin-bottom: 0.6rem;
   letter-spacing: 0.03em;
 }
@@ -430,7 +430,7 @@ body { overflow-x: hidden; }
   padding: 0.7rem 1rem;
   font-family: "JetBrains Mono", monospace;
   font-size: 0.75rem;
-  color: #64748b;
+  color: #7788a0;
   background: none;
   border: none;
   border-bottom: 2px solid transparent;
@@ -481,7 +481,7 @@ body { overflow-x: hidden; }
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   font-family: "JetBrains Mono", monospace;
   font-size: 0.68rem;
-  color: #64748b;
+  color: #7788a0;
 }
 .nb-branch {
   display: inline-flex;
@@ -764,7 +764,7 @@ body { overflow-x: hidden; }
   font-size: 1.15rem;
   line-height: 1.3;
 }
-.project-date { font-size: 0.75rem; color: #64748b; white-space: nowrap; }
+.project-date { font-size: 0.75rem; color: #7788a0; white-space: nowrap; }
 .project-desc { color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin: 0.85rem 0 0.5rem; }
 /* Collapsed state: show only a short preview of the description */
 .project-desc.clamped {
@@ -946,7 +946,7 @@ body { overflow-x: hidden; }
   font-size: 1.15rem;
 }
 .edu-degree { color: #cbd5e1; margin-top: 0.35rem; font-size: 0.95rem; }
-.edu-meta { color: #64748b; font-size: 0.85rem; margin-top: 0.5rem; }
+.edu-meta { color: #7788a0; font-size: 0.85rem; margin-top: 0.5rem; }
 
 .cert-item {
   display: flex;
@@ -1026,7 +1026,7 @@ body { overflow-x: hidden; }
   font-size: 1.05rem;
   line-height: 1.35;
 }
-.cred-meta { color: #64748b; font-size: 0.85rem; margin-top: 0.4rem; }
+.cred-meta { color: #7788a0; font-size: 0.85rem; margin-top: 0.4rem; }
 
 /* Fullscreen lightbox for viewing a certificate */
 .lightbox {
@@ -1140,7 +1140,7 @@ body { overflow-x: hidden; }
 }
 a.contact-row:hover { border-color: rgba(139, 92, 246, 0.45); transform: translateX(4px); }
 .contact-ic { font-size: 1.35rem; }
-.contact-label { font-size: 0.75rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; }
+.contact-label { font-size: 0.75rem; color: #7788a0; text-transform: uppercase; letter-spacing: 0.05em; }
 .contact-value { color: #e2e8f0; font-weight: 500; }
 
 .form-label { display: block; font-size: 0.85rem; color: #cbd5e1; margin-bottom: 0.4rem; }
