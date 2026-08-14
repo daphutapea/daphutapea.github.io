@@ -1,0 +1,6 @@
+/* Build source for css/tailwind.css.
+   Do not link this file from the page - link the built css/tailwind.css.
+   Rebuild after adding new Tailwind classes:  npm run build:css        */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

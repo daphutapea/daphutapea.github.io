@@ -19,3 +19,8 @@ assets/pbi-certificate-220481IAPDGIK2972024.pdf
 
 # Local archives
 *.zip
+
+# Tailwind build tooling. The BUILT css/tailwind.css IS committed, so the
+# published site still needs no build step - only rebuilding does.
+node_modules/
+package-lock.json

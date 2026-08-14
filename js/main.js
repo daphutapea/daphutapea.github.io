@@ -466,7 +466,7 @@ document.addEventListener("DOMContentLoaded", () => {
     submitBtn.disabled = true;
     submitBtn.textContent = "Sending...";
     formStatus.textContent = "";
-    formStatus.className = "text-xs text-slate-500 text-center";
+    formStatus.className = "text-xs text-slate-400 text-center";
 
     try {
       const payload = Object.fromEntries(new FormData(form));

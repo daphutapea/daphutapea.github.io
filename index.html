@@ -27,33 +27,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind CSS (Play CDN - gives us all utility classes with no build step) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    // Custom design tokens for our "bold & modern" dark theme
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ink: '#0a0a0f',          // page background
-            surface: '#12121c',      // cards
-            'surface-2': '#1a1a2b',  // raised cards / hovers
-            primary: '#8b5cf6',      // violet
-            secondary: '#d946ef',    // fuchsia
-            accent: '#22d3ee',       // cyan
-            muted: '#94a3b8',        // muted text
-          },
-          fontFamily: {
-            display: ['"Space Grotesk"', 'sans-serif'],
-            sans: ['Inter', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
-          },
-        },
-      },
-    };
-  </script>
+  <!-- Tailwind CSS, prebuilt. Design tokens live in tailwind.config.js.
+       After adding new Tailwind classes to this file or js/main.js, run:
+         npm run build:css
+       (This replaced the Play CDN, which shipped ~400 KB of render-blocking
+       JavaScript and compiled the CSS in the browser on every visit.) -->
+  <link rel="stylesheet" href="css/tailwind.css?v=1" />
 
-  <!-- Our custom styles (animations, gradients, etc.) -->
+  <!-- Our custom styles (animations, gradients, etc.) - must load after Tailwind -->
   <link rel="stylesheet" href="css/styles.css?v=2" />
 </head>
 
