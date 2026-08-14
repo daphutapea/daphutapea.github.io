@@ -650,6 +650,35 @@
           </div>
         </article>
 
+        <!-- Featured Project: Procurement Spend Analytics (Power BI / BI dashboard) - full-width -->
+        <article class="project-card project-featured lg:col-span-2" data-reveal>
+          <div class="featured-grid">
+            <button type="button" class="dash-frame" data-lightbox="assets/procurement-pipeline.svg" data-lightbox-alt="Procurement Spend Analytics pipeline and data model: 3 CSV files and 344,504 rows from California SCPRS open data, cleaned through 10 Power Query queries, modeled as a 7-table star schema (fact_purchase_orders joined to dim_date, dim_supplier, dim_department, dim_commodity, dim_qualification and a supplier-qualification bridge), and delivered as a 6-page report with 30+ DAX measures" aria-label="Enlarge the Procurement Spend Analytics pipeline diagram">
+              <img src="assets/procurement-pipeline.svg" alt="Diagram of the pipeline and star schema: 3 CSV files with 344,504 rows from California SCPRS open data, through 10 Power Query queries, into a 7-table star schema with fact_purchase_orders at the centre holding 344,474 rows, out to a 6-page Power BI report with 30 or more DAX measures" loading="lazy" />
+              <span class="cred-zoom">Pipeline and model - click to enlarge</span>
+            </button>
+            <div class="project-body featured-body">
+              <span class="project-category-inline">Business Intelligence - Power BI</span>
+              <div class="flex items-center justify-between gap-4">
+                <h3 class="project-title">Procurement Spend &amp; Supplier Performance</h3>
+                <span class="project-date font-mono">Aug 2026</span>
+              </div>
+              <p class="project-desc">
+                A six-page <span class="text-white">Power BI</span> report over <span class="text-white">344,504 public-sector purchase order lines</span> (State of California SCPRS, FY2012-2015) covering spend, unit prices, supplier performance, and data quality. I profiled and cleaned the raw extract in <span class="text-white">Power Query</span>, modeled it as a <span class="text-white">star schema</span>, and wrote DAX measures for time intelligence, price variance against a median baseline, supplier concentration (HHI and Pareto/ABC), and small-business spend share. Two findings shaped the build: <span class="text-accent font-semibold">0.3% of lines drove 86% of total value</span>, so a spend-tier split keeps operational procurement readable instead of being swamped by a few huge program contracts; and an Indonesian system locale was silently making Power Query read decimal points as thousands separators, inflating every currency value <span class="text-white">100x with no error raised</span> - caught by validating totals against the source and fixed by forcing an explicit en-US culture on every conversion.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Power BI</span><span class="tag">Power Query (M)</span><span class="tag">DAX</span><span class="tag">Star Schema</span><span class="tag">Data Modeling</span><span class="tag">Data Quality</span><span class="tag">Python</span><span class="tag">Pandas</span>
+              </div>
+              <div class="project-links">
+                <button type="button" class="project-link-primary" data-lightbox="assets/procurement-pipeline.svg" data-lightbox-alt="Procurement Spend Analytics pipeline and data model: 3 CSV files and 344,504 rows from California SCPRS open data, cleaned through 10 Power Query queries, modeled as a 7-table star schema (fact_purchase_orders joined to dim_date, dim_supplier, dim_department, dim_commodity, dim_qualification and a supplier-qualification bridge), and delivered as a 6-page report with 30+ DAX measures">
+                  View Diagram
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
         <!-- Featured Project: Credit Card Customer Segmentation (clustering + Power BI dashboard) - full-width, placed last -->
         <article class="project-card project-featured lg:col-span-2" data-reveal>
           <div class="featured-grid">

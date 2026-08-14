@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="1000" height="620" role="img" aria-label="Procurement analytics pipeline and star schema data model">
+  <title>Procurement Spend Analytics - pipeline and star schema</title>
+  <desc>Top: a four stage pipeline. Source is 3 CSV files, 344,504 rows and 32 columns of State of California SCPRS open data. Power Query applies 10 queries, a custom function and removes 7 columns, with locale-safe parsing and a split to a bridge table. The data model is a star schema of 7 tables, 1 fact, 5 dimensions and 1 bridge, holding 344,474 fact rows worth 150.52 billion dollars. The report has 6 pages and more than 30 DAX measures covering spend, suppliers, price and data quality. Bottom: the star schema, with fact_purchase_orders at the centre joined to dim_date, dim_supplier, dim_department, dim_commodity, dim_qualification and bridge_supplier_qualification.</desc>
+  <defs>
+    <linearGradient id="accentbar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="0.5" stop-color="#d946ef"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="620" fill="#0d0d15"/>
+
+  <!-- ==================== STAGE BOXES ==================== -->
+  <rect x="20" y="34" width="214" height="182" rx="14" fill="#12121c" stroke="#2a2a3d" stroke-width="1.5"/>
+  <rect x="20" y="34" width="214" height="4" rx="2" fill="url(#accentbar)"/>
+  <text x="127" y="72" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="18" font-weight="bold" fill="#22d3ee">SOURCE</text>
+  <text x="127" y="106" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="16" fill="#e2e8f0">3 CSV files</text>
+  <text x="127" y="130" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="16" fill="#e2e8f0">344,504 rows</text>
+  <text x="127" y="154" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="16" fill="#e2e8f0">32 columns</text>
+  <text x="127" y="184" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" font-style="italic" fill="#94a3b8">California SCPRS</text>
+  <text x="127" y="202" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" font-style="italic" fill="#94a3b8">open data</text>
+
+  <path d="M242 124 H 272" stroke="#8b5cf6" stroke-width="2.5" fill="none"/>
+  <path d="M266 117 l 8 7 l -8 7 z" fill="#8b5cf6"/>
+
+  <rect x="282" y="34" width="214" height="182" rx="14" fill="#12121c" stroke="#2a2a3d" stroke-width="1.5"/>
+  <rect x="282" y="34" width="214" height="4" rx="2" fill="url(#accentbar)"/>
+  <text x="389" y="72" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="18" font-weight="bold" fill="#22d3ee">POWER QUERY</text>
+  <text x="389" y="106" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="16" fill="#e2e8f0">10 queries</text>
+  <text x="389" y="130" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="16" fill="#e2e8f0">custom function</text>
+  <text x="389" y="154" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="16" fill="#e2e8f0">7 columns removed</text>
+  <text x="389" y="184" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" font-style="italic" fill="#94a3b8">locale-safe parsing</text>
+  <text x="389" y="202" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" font-style="italic" fill="#94a3b8">split to bridge table</text>
+
+  <path d="M504 124 H 534" stroke="#8b5cf6" stroke-width="2.5" fill="none"/>
+  <path d="M528 117 l 8 7 l -8 7 z" fill="#8b5cf6"/>
+
+  <rect x="544" y="34" width="214" height="182" rx="14" fill="#12121c" stroke="#2a2a3d" stroke-width="1.5"/>
+  <rect x="544" y="34" width="214" height="4" rx="2" fill="url(#accentbar)"/>
+  <text x="651" y="72" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="18" font-weight="bold" fill="#22d3ee">DATA MODEL</text>
+  <text x="651" y="106" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="16" fill="#e2e8f0">star schema</text>
+  <text x="651" y="130" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="16" fill="#e2e8f0">7 tables</text>
+  <text x="651" y="154" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="16" fill="#e2e8f0">344,474 fact rows</text>
+  <text x="651" y="184" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" font-style="italic" fill="#94a3b8">$150.52 bn</text>
+  <text x="651" y="202" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" font-style="italic" fill="#94a3b8">total value</text>
+
+  <path d="M766 124 H 796" stroke="#8b5cf6" stroke-width="2.5" fill="none"/>
+  <path d="M790 117 l 8 7 l -8 7 z" fill="#8b5cf6"/>
+
+  <rect x="806" y="34" width="174" height="182" rx="14" fill="#12121c" stroke="#2a2a3d" stroke-width="1.5"/>
+  <rect x="806" y="34" width="174" height="4" rx="2" fill="url(#accentbar)"/>
+  <text x="893" y="72" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="18" font-weight="bold" fill="#22d3ee">REPORT</text>
+  <text x="893" y="106" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="16" fill="#e2e8f0">6 pages</text>
+  <text x="893" y="130" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="16" fill="#e2e8f0">30+ measures</text>
+  <text x="893" y="184" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" font-style="italic" fill="#94a3b8">spend, suppliers,</text>
+  <text x="893" y="202" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" font-style="italic" fill="#94a3b8">price, data quality</text>
+
+  <!-- ==================== STAR SCHEMA ==================== -->
+  <line x1="20" y1="252" x2="980" y2="252" stroke="#22223a" stroke-width="1"/>
+  <text x="20" y="282" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14" font-weight="bold" fill="#7788a0" letter-spacing="1">THE MODEL</text>
+
+  <!-- relationship lines (drawn first so boxes sit on top) -->
+  <line x1="165" y1="354" x2="430" y2="428" stroke="#8b5cf6" stroke-width="1.6" opacity="0.55"/>
+  <line x1="500" y1="354" x2="500" y2="428" stroke="#8b5cf6" stroke-width="1.6" opacity="0.55"/>
+  <line x1="835" y1="354" x2="570" y2="428" stroke="#8b5cf6" stroke-width="1.6" opacity="0.55"/>
+  <line x1="165" y1="546" x2="430" y2="482" stroke="#8b5cf6" stroke-width="1.6" opacity="0.55"/>
+  <line x1="500" y1="546" x2="500" y2="482" stroke="#8b5cf6" stroke-width="1.6" opacity="0.55"/>
+  <line x1="835" y1="546" x2="570" y2="482" stroke="#8b5cf6" stroke-width="1.6" opacity="0.55"/>
+
+  <!-- dimension tables, top row -->
+  <rect x="70" y="312" width="190" height="42" rx="9" fill="#1a1a2b" stroke="#2a2a3d" stroke-width="1.2"/>
+  <text x="165" y="339" text-anchor="middle" font-family="Consolas, monospace" font-size="15" fill="#cbd5e1">dim_date</text>
+  <rect x="405" y="312" width="190" height="42" rx="9" fill="#1a1a2b" stroke="#2a2a3d" stroke-width="1.2"/>
+  <text x="500" y="339" text-anchor="middle" font-family="Consolas, monospace" font-size="15" fill="#cbd5e1">dim_supplier</text>
+  <rect x="740" y="312" width="190" height="42" rx="9" fill="#1a1a2b" stroke="#2a2a3d" stroke-width="1.2"/>
+  <text x="835" y="339" text-anchor="middle" font-family="Consolas, monospace" font-size="15" fill="#cbd5e1">dim_department</text>
+
+  <!-- fact table -->
+  <rect x="390" y="428" width="220" height="54" rx="11" fill="#12121c" stroke="#22d3ee" stroke-width="2"/>
+  <text x="500" y="452" text-anchor="middle" font-family="Consolas, monospace" font-size="16" fill="#22d3ee">fact_purchase_orders</text>
+  <text x="500" y="471" text-anchor="middle" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="13" fill="#94a3b8">344,474 rows</text>
+
+  <!-- dimension tables, bottom row -->
+  <rect x="70" y="546" width="190" height="42" rx="9" fill="#1a1a2b" stroke="#2a2a3d" stroke-width="1.2"/>
+  <text x="165" y="573" text-anchor="middle" font-family="Consolas, monospace" font-size="15" fill="#cbd5e1">dim_commodity</text>
+  <rect x="405" y="546" width="190" height="42" rx="9" fill="#1a1a2b" stroke="#2a2a3d" stroke-width="1.2"/>
+  <text x="500" y="573" text-anchor="middle" font-family="Consolas, monospace" font-size="15" fill="#cbd5e1">dim_qualification</text>
+  <rect x="740" y="546" width="190" height="42" rx="9" fill="#1a1a2b" stroke="#2a2a3d" stroke-width="1.2"/>
+  <text x="835" y="567" text-anchor="middle" font-family="Consolas, monospace" font-size="13" fill="#cbd5e1">bridge_supplier</text>
+  <text x="835" y="583" text-anchor="middle" font-family="Consolas, monospace" font-size="13" fill="#cbd5e1">_qualification</text>
+</svg>
