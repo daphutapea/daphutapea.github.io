@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="css/tailwind.css?v=1" />
 
   <!-- Our custom styles (animations, gradients, etc.) - must load after Tailwind -->
-  <link rel="stylesheet" href="css/styles.css?v=6" />
+  <link rel="stylesheet" href="css/styles.css?v=7" />
 </head>
 
 <body class="bg-ink text-slate-300 font-sans antialiased selection:bg-primary/30 selection:text-white">
@@ -732,6 +732,39 @@
               <a href="https://github.com/daphutapea/Topic-Modeling-Tokopedia-Reviews" target="_blank" rel="noopener" class="project-link-secondary">
                 View Code
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-1.7c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <!-- Project 8 -->
+        <article class="project-card" data-reveal>
+          <div class="project-banner banner-8">
+            <img src="assets/rossmann-forecast.png" alt="Six weeks of forecast sales plotted in cyan continuing on from recent actual sales in grey, for one Rossmann store" class="project-shot" loading="lazy" />
+            <span class="project-category">Time Series - Forecasting</span>
+          </div>
+          <div class="project-body">
+            <div class="flex items-center justify-between gap-4">
+              <h3 class="project-title">Rossmann Store Sales Forecasting</h3>
+              <span class="project-date font-mono">Jul 2026</span>
+            </div>
+            <p class="project-desc clamped">
+              Forecasting daily sales <span class="text-white">6 weeks ahead</span> for <span class="text-white">1,115 Rossmann stores</span>, to support staffing and stock planning. A single global <span class="text-white">LightGBM</span> model reaches <span class="text-accent font-semibold">RMSPE 0.156</span> under rolling-origin backtesting - about half the error of a seasonal-naive baseline, and MAE 696 EUR against an average store-day of 6,956. Deliberately methodology-first: baselines before models, four backtest windows instead of one lucky split, and a Diebold-Mariano test before accepting a candidate feature.
+            </p>
+            <button type="button" class="read-more" aria-expanded="false">
+              <span class="read-more-label">Read more</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="project-tags">
+              <span class="tag">Python</span><span class="tag">LightGBM</span><span class="tag">SARIMA</span><span class="tag">Statsmodels</span><span class="tag">Time Series</span><span class="tag">Backtesting</span><span class="tag">Streamlit</span><span class="tag">Pandas</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/daphutapea/Rossmann-Sales-Forecasting" target="_blank" rel="noopener" class="project-link-primary">
+                View Code
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-1.7c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+              </a>
+              <a href="https://github.com/daphutapea/Rossmann-Sales-Forecasting/blob/main/01_rossmann_forecasting.ipynb" target="_blank" rel="noopener" class="project-link-secondary">
+                Notebook
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
               </a>
             </div>
           </div>
