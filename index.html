@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="css/tailwind.css?v=1" />
 
   <!-- Our custom styles (animations, gradients, etc.) - must load after Tailwind -->
-  <link rel="stylesheet" href="css/styles.css?v=4" />
+  <link rel="stylesheet" href="css/styles.css?v=6" />
 </head>
 
 <body class="bg-ink text-slate-300 font-sans antialiased selection:bg-primary/30 selection:text-white">
@@ -515,7 +515,6 @@
       </div>
 
       <div class="grid lg:grid-cols-2 gap-8 mt-12 projects-grid">
-        <!-- Project 1 -->
         <article class="project-card" data-reveal>
           <div class="project-banner banner-1">
             <img src="assets/satellite-land-use-classifier.jpg" alt="Land-Use Classification of Satellite Imagery - app screenshot" class="project-shot" loading="lazy" />
@@ -548,8 +547,6 @@
             </div>
           </div>
         </article>
-
-        <!-- Project 2 -->
         <article class="project-card" data-reveal>
           <div class="project-banner banner-2">
             <img src="assets/insurance-fraud-detection.jpg" alt="Auto-Insurance Claim Fraud Detection - app screenshot" class="project-shot" loading="lazy" />
@@ -582,42 +579,6 @@
             </div>
           </div>
         </article>
-
-        <!-- Project 3 -->
-        <article class="project-card" data-reveal>
-          <div class="project-banner banner-3">
-            <img src="assets/topic-pulse.jpg" alt="Topic Pulse - Tokopedia review topic modeling app screenshot" class="project-shot" loading="lazy" />
-            <span class="project-category">NLP - Topic Modeling</span>
-          </div>
-          <div class="project-body">
-            <div class="flex items-center justify-between gap-4">
-              <h3 class="project-title">Topic Modeling of E-Commerce Reviews</h3>
-              <span class="project-date font-mono">Jun 2026</span>
-            </div>
-            <p class="project-desc clamped">
-              Mined <span class="text-white">5,400 Indonesian Tokopedia reviews</span> (PRDECT-ID) to uncover what drives praise versus complaints. Benchmarked <span class="text-white">BERTopic</span> (embeddings + UMAP + HDBSCAN) against <span class="text-white">LDA</span> and <span class="text-white">K-Means</span> baselines, modeled separately on positive and negative reviews. BERTopic led on coherence and diversity, surfacing 8 praise and 9 complaint themes with actionable business recommendations.
-            </p>
-            <button type="button" class="read-more" aria-expanded="false">
-              <span class="read-more-label">Read more</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="project-tags">
-              <span class="tag">Python</span><span class="tag">BERTopic</span><span class="tag">Transformers</span><span class="tag">Gensim (LDA)</span><span class="tag">Scikit-Learn</span><span class="tag">UMAP</span><span class="tag">HDBSCAN</span><span class="tag">Pandas</span>
-            </div>
-            <div class="project-links">
-              <a href="https://huggingface.co/spaces/dahutapea/Topic-Modeling-Tokopedia-Reviews" target="_blank" rel="noopener" class="project-link-primary">
-                Live Demo
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-              <a href="https://github.com/daphutapea/Topic-Modeling-Tokopedia-Reviews" target="_blank" rel="noopener" class="project-link-secondary">
-                View Code
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-1.7c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 4 -->
         <article class="project-card" data-reveal>
           <div class="project-banner banner-4">
             <img src="assets/finchat.jpg" alt="FinChat - chat with SEC 10-K filings app screenshot" class="project-shot" loading="lazy" />
@@ -650,28 +611,27 @@
             </div>
           </div>
         </article>
-
-        <!-- Featured Project: Agentic Data Analyst (LLM agent / text-to-SQL) - full-width -->
-        <article class="project-card project-featured lg:col-span-2" data-reveal>
-          <div class="featured-grid">
-            <button type="button" class="dash-frame" data-lightbox="assets/agentic-data-analyst-app.png" data-lightbox-alt="The Agentic Data Analyst web app: a light, worksheet-style interface headed Rossmann store sales, read-only, with four numbered starting questions and a box to ask your own. The fourth question, about profit margin, is marked deliberate because the database holds no cost data." aria-label="Enlarge the Agentic Data Analyst app screenshot">
-              <img src="assets/agentic-data-analyst-app.png" alt="Screenshot of the Agentic Data Analyst web app: a serif masthead reading Agentic Data Analyst over the note that the agent inspects the schema, writes its own SQL and runs it against 1,017,209 rows, followed by four numbered starting questions and an ask box." loading="lazy" />
-              <span class="cred-zoom">The live app - click to enlarge</span>
+        <!-- Project 5 -->
+        <article class="project-card" data-reveal>
+          <div class="project-banner banner-5">
+            <img src="assets/agentic-data-analyst-app.png" alt="Agentic Data Analyst - web app screenshot showing the starting questions and the ask box" class="project-shot" loading="lazy" />
+            <span class="project-category">Agentic AI - LLM Tool Use</span>
+          </div>
+          <div class="project-body">
+            <div class="flex items-center justify-between gap-4">
+              <h3 class="project-title">Agentic Data Analyst</h3>
+              <span class="project-date font-mono">Aug 2026</span>
+            </div>
+            <p class="project-desc clamped">
+              An AI agent that answers business questions by <span class="text-white">writing and running its own SQL</span> - not a chatbot that talks about data. Handed three tools over a <span class="text-white">DuckDB</span> database of <span class="text-white">1,017,209 Rossmann sales rows</span>, it inspects the schema, writes a query, reads the result, and decides its next step, streaming every query to the UI so you can check its work. Scored <span class="text-accent font-semibold">72/72 across three runs</span> on a gold set whose answers were computed independently in SQL first - including two questions it is <span class="text-white">supposed to refuse</span>, because the database holds no cost data.
+            </p>
+            <button type="button" class="read-more" aria-expanded="false">
+              <span class="read-more-label">Read more</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="project-body featured-body">
-              <span class="project-category-inline">Agentic AI - LLM Tool Use</span>
-              <div class="flex items-center justify-between gap-4">
-                <h3 class="project-title">Agentic Data Analyst</h3>
-                <span class="project-date font-mono">Aug 2026</span>
-              </div>
-              <p class="project-desc">
-                An AI agent that answers business questions by <span class="text-white">writing and running its own SQL</span> - not a chatbot that talks about data. Handed three tools over a <span class="text-white">DuckDB</span> database of <span class="text-white">1,017,209 Rossmann sales rows</span>, it inspects the schema, writes a query, reads the result, and decides its next step, streaming every query to the UI so you can check its work. Scored <span class="text-accent font-semibold">72/72 across three runs</span> on a gold set whose answers were computed independently in SQL first - including two questions it is <span class="text-white">supposed to refuse</span>, because the database holds no cost data.
-              </p>
-              <div class="project-tags">
-                <span class="tag">Python</span><span class="tag">DuckDB</span><span class="tag">Gemini API</span><span class="tag">Function Calling</span><span class="tag">FastAPI</span><span class="tag">Next.js</span><span class="tag">Tailwind</span><span class="tag">Vercel</span><span class="tag">Pytest</span>
-              </div>
-              <div class="project-links links-wrap">
-                <a href="https://agentic-data-analyst-web.vercel.app" target="_blank" rel="noopener" class="project-link-primary">
+            <div class="project-tags"><span class="tag">Python</span><span class="tag">DuckDB</span><span class="tag">Gemini API</span><span class="tag">Function Calling</span><span class="tag">FastAPI</span><span class="tag">Next.js</span><span class="tag">Tailwind</span><span class="tag">Vercel</span><span class="tag">Pytest</span></div>
+            <div class="project-links links-wrap">
+              <a href="https://agentic-data-analyst-web.vercel.app" target="_blank" rel="noopener" class="project-link-primary">
                   Live Demo
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                 </a>
@@ -683,61 +643,57 @@
                   Architecture
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                 </button>
-              </div>
             </div>
           </div>
         </article>
-
-        <!-- Featured Project: Procurement Spend Analytics (Power BI / BI dashboard) - full-width -->
-        <article class="project-card project-featured lg:col-span-2" data-reveal>
-          <div class="featured-grid">
-            <button type="button" class="dash-frame" data-lightbox="assets/procurement-pipeline.svg" data-lightbox-alt="Procurement Spend Analytics pipeline and data model: 3 CSV files and 344,504 rows from California SCPRS open data, cleaned through 10 Power Query queries, modeled as a 7-table star schema (fact_purchase_orders joined to dim_date, dim_supplier, dim_department, dim_commodity, dim_qualification and a supplier-qualification bridge), and delivered as a 6-page report with 30+ DAX measures" aria-label="Enlarge the Procurement Spend Analytics pipeline diagram">
-              <img src="assets/procurement-pipeline.svg" alt="Diagram of the pipeline and star schema: 3 CSV files with 344,504 rows from California SCPRS open data, through 10 Power Query queries, into a 7-table star schema with fact_purchase_orders at the centre holding 344,474 rows, out to a 6-page Power BI report with 30 or more DAX measures" loading="lazy" />
-              <span class="cred-zoom">Pipeline and model - click to enlarge</span>
+        <!-- Project 6 -->
+        <article class="project-card" data-reveal>
+          <div class="project-banner banner-6">
+            <img src="assets/procurement-pipeline.svg" alt="Procurement Spend Analytics - pipeline and star schema diagram" class="project-shot is-diagram" loading="lazy" />
+            <span class="project-category">Business Intelligence - Power BI</span>
+          </div>
+          <div class="project-body">
+            <div class="flex items-center justify-between gap-4">
+              <h3 class="project-title">Procurement Spend &amp; Supplier Performance</h3>
+              <span class="project-date font-mono">Aug 2026</span>
+            </div>
+            <p class="project-desc clamped">
+              A six-page <span class="text-white">Power BI</span> report over <span class="text-white">344,504 public-sector purchase order lines</span> (State of California SCPRS). Cleaned in <span class="text-white">Power Query</span>, modeled as a <span class="text-white">star schema</span>, with DAX measures for price variance, supplier concentration (HHI, Pareto/ABC), and small-business spend share. Two findings shaped it: <span class="text-accent font-semibold">0.3% of lines drove 86% of total value</span>, so a spend-tier split keeps operational spend readable; and an Indonesian system locale was silently making Power Query read decimal points as thousands separators, inflating every currency value <span class="text-white">100x with no error raised</span>.
+            </p>
+            <button type="button" class="read-more" aria-expanded="false">
+              <span class="read-more-label">Read more</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="project-body featured-body">
-              <span class="project-category-inline">Business Intelligence - Power BI</span>
-              <div class="flex items-center justify-between gap-4">
-                <h3 class="project-title">Procurement Spend &amp; Supplier Performance</h3>
-                <span class="project-date font-mono">Aug 2026</span>
-              </div>
-              <p class="project-desc">
-                A six-page <span class="text-white">Power BI</span> report over <span class="text-white">344,504 public-sector purchase order lines</span> (State of California SCPRS). Cleaned in <span class="text-white">Power Query</span>, modeled as a <span class="text-white">star schema</span>, with DAX measures for price variance, supplier concentration (HHI, Pareto/ABC), and small-business spend share. Two findings shaped it: <span class="text-accent font-semibold">0.3% of lines drove 86% of total value</span>, so a spend-tier split keeps operational spend readable; and an Indonesian system locale was silently making Power Query read decimal points as thousands separators, inflating every currency value <span class="text-white">100x with no error raised</span>.
-              </p>
-              <div class="project-tags">
-                <span class="tag">Power BI</span><span class="tag">Power Query (M)</span><span class="tag">DAX</span><span class="tag">Star Schema</span><span class="tag">Data Modeling</span><span class="tag">Data Quality</span><span class="tag">Python</span><span class="tag">Pandas</span>
-              </div>
-              <div class="project-links">
-                <button type="button" class="project-link-primary" data-lightbox="assets/procurement-pipeline.svg" data-lightbox-alt="Procurement Spend Analytics pipeline and data model: 3 CSV files and 344,504 rows from California SCPRS open data, cleaned through 10 Power Query queries, modeled as a 7-table star schema (fact_purchase_orders joined to dim_date, dim_supplier, dim_department, dim_commodity, dim_qualification and a supplier-qualification bridge), and delivered as a 6-page report with 30+ DAX measures">
+            <div class="project-tags"><span class="tag">Power BI</span><span class="tag">Power Query (M)</span><span class="tag">DAX</span><span class="tag">Star Schema</span><span class="tag">Data Modeling</span><span class="tag">Data Quality</span><span class="tag">Python</span><span class="tag">Pandas</span></div>
+            <div class="project-links">
+              <button type="button" class="project-link-primary" data-lightbox="assets/procurement-pipeline.svg" data-lightbox-alt="Procurement Spend Analytics pipeline and data model: 3 CSV files and 344,504 rows from California SCPRS open data, cleaned through 10 Power Query queries, modeled as a 7-table star schema (fact_purchase_orders joined to dim_date, dim_supplier, dim_department, dim_commodity, dim_qualification and a supplier-qualification bridge), and delivered as a 6-page report with 30+ DAX measures">
                   View Diagram
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                 </button>
-              </div>
             </div>
           </div>
         </article>
-
-        <!-- Featured Project: Credit Card Customer Segmentation (clustering + Power BI dashboard) - full-width, placed last -->
-        <article class="project-card project-featured lg:col-span-2" data-reveal>
-          <div class="featured-grid">
-            <button type="button" class="dash-frame" data-lightbox="assets/credit-card-dashboard.jpg" data-lightbox-alt="Credit Card Customer Segmentation - Power BI dashboard: KPI cards, a customers-per-segment bar chart, a balance-vs-credit-limit scatter coloured by persona, and a management summary table" aria-label="Enlarge the Credit Card Customer Segmentation Power BI dashboard">
-              <img src="assets/credit-card-dashboard.jpg" alt="Credit Card Customer Segmentation Power BI dashboard showing KPI cards, a customers-per-segment bar chart, a balance-vs-credit-limit scatter plot coloured by persona, and a management summary table" loading="lazy" />
-              <span class="cred-zoom">Click to enlarge</span>
+        <!-- Project 7 -->
+        <article class="project-card" data-reveal>
+          <div class="project-banner banner-7">
+            <img src="assets/credit-card-dashboard.jpg" alt="Credit Card Customer Segmentation - Power BI dashboard screenshot" class="project-shot" loading="lazy" />
+            <span class="project-category">Unsupervised ML - Clustering</span>
+          </div>
+          <div class="project-body">
+            <div class="flex items-center justify-between gap-4">
+              <h3 class="project-title">Credit Card Customer Segmentation</h3>
+              <span class="project-date font-mono">Jul 2026</span>
+            </div>
+            <p class="project-desc clamped">
+              Segmented <span class="text-white">4,475 credit-card holders</span> into three behavioral personas - <span class="text-white">Revolvers</span>, <span class="text-white">Active Transactors</span>, and <span class="text-white">Dormant</span> - using <span class="text-white">K-Means clustering</span> over PCA-reduced usage features pulled from Google BigQuery (17 features down to 11 components, <span class="text-accent font-semibold">96% of variance kept</span>), with k=3 chosen on four independent signals. An interactive <span class="text-white">Power BI dashboard</span> turns the clusters into a decision tool: each segment gets a revenue driver, a risk level, and a concrete next action for the marketing team.
+            </p>
+            <button type="button" class="read-more" aria-expanded="false">
+              <span class="read-more-label">Read more</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            <div class="project-body featured-body">
-              <span class="project-category-inline">Unsupervised ML - Clustering &amp; BI Dashboard</span>
-              <div class="flex items-center justify-between gap-4">
-                <h3 class="project-title">Credit Card Customer Segmentation</h3>
-                <span class="project-date font-mono">Jul 2026</span>
-              </div>
-              <p class="project-desc">
-                Segmented <span class="text-white">4,475 credit-card holders</span> into three behavioral personas - <span class="text-white">Revolvers</span>, <span class="text-white">Active Transactors</span>, and <span class="text-white">Dormant</span> - using <span class="text-white">K-Means clustering</span> over PCA-reduced usage features pulled from Google BigQuery (17 features down to 11 components, <span class="text-accent font-semibold">96% of variance kept</span>), with k=3 chosen on four independent signals. An interactive <span class="text-white">Power BI dashboard</span> turns the clusters into a decision tool: each segment gets a revenue driver, a risk level, and a concrete next action for the marketing team.
-              </p>
-              <div class="project-tags">
-                <span class="tag">Python</span><span class="tag">Scikit-Learn</span><span class="tag">K-Means</span><span class="tag">PCA</span><span class="tag">Isolation Forest</span><span class="tag">Power BI</span><span class="tag">Google BigQuery</span><span class="tag">Pandas</span>
-              </div>
-              <div class="project-links">
-                <button type="button" class="project-link-primary" data-lightbox="assets/credit-card-dashboard.jpg" data-lightbox-alt="Credit Card Customer Segmentation - Power BI dashboard: KPI cards, a customers-per-segment bar chart, a balance-vs-credit-limit scatter coloured by persona, and a management summary table">
+            <div class="project-tags"><span class="tag">Python</span><span class="tag">Scikit-Learn</span><span class="tag">K-Means</span><span class="tag">PCA</span><span class="tag">Isolation Forest</span><span class="tag">Power BI</span><span class="tag">Google BigQuery</span><span class="tag">Pandas</span></div>
+            <div class="project-links">
+              <button type="button" class="project-link-primary" data-lightbox="assets/credit-card-dashboard.jpg" data-lightbox-alt="Credit Card Customer Segmentation - Power BI dashboard: KPI cards, a customers-per-segment bar chart, a balance-vs-credit-limit scatter coloured by persona, and a management summary table">
                   View Dashboard
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                 </button>
@@ -745,7 +701,38 @@
                   View Code
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-1.7c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
                 </a>
-              </div>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-reveal>
+          <div class="project-banner banner-3">
+            <img src="assets/topic-pulse.jpg" alt="Topic Pulse - Tokopedia review topic modeling app screenshot" class="project-shot" loading="lazy" />
+            <span class="project-category">NLP - Topic Modeling</span>
+          </div>
+          <div class="project-body">
+            <div class="flex items-center justify-between gap-4">
+              <h3 class="project-title">Topic Modeling of E-Commerce Reviews</h3>
+              <span class="project-date font-mono">Jun 2026</span>
+            </div>
+            <p class="project-desc clamped">
+              Mined <span class="text-white">5,400 Indonesian Tokopedia reviews</span> (PRDECT-ID) to uncover what drives praise versus complaints. Benchmarked <span class="text-white">BERTopic</span> (embeddings + UMAP + HDBSCAN) against <span class="text-white">LDA</span> and <span class="text-white">K-Means</span> baselines, modeled separately on positive and negative reviews. BERTopic led on coherence and diversity, surfacing 8 praise and 9 complaint themes with actionable business recommendations.
+            </p>
+            <button type="button" class="read-more" aria-expanded="false">
+              <span class="read-more-label">Read more</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="project-tags">
+              <span class="tag">Python</span><span class="tag">BERTopic</span><span class="tag">Transformers</span><span class="tag">Gensim (LDA)</span><span class="tag">Scikit-Learn</span><span class="tag">UMAP</span><span class="tag">HDBSCAN</span><span class="tag">Pandas</span>
+            </div>
+            <div class="project-links">
+              <a href="https://huggingface.co/spaces/dahutapea/Topic-Modeling-Tokopedia-Reviews" target="_blank" rel="noopener" class="project-link-primary">
+                Live Demo
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <a href="https://github.com/daphutapea/Topic-Modeling-Tokopedia-Reviews" target="_blank" rel="noopener" class="project-link-secondary">
+                View Code
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-1.7c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+              </a>
             </div>
           </div>
         </article>
