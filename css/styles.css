@@ -794,6 +794,9 @@ body { overflow-x: hidden; }
 .read-more[aria-expanded="true"] svg { transform: rotate(180deg); }
 .project-tags { margin-bottom: 1.25rem; }
 .project-links { display: flex; gap: 0.75rem; }
+/* Two links fit one narrow row exactly, so wrapping is opt-in: only cards with a
+   third link need it, and enabling it globally would stack the two-link cards. */
+.project-links.links-wrap { flex-wrap: wrap; }
 .project-link-primary {
   display: inline-flex;
   align-items: center;
