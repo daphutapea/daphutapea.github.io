@@ -11,7 +11,7 @@ step or dependencies.
 - Responsive single-page layout: Hero, About, Skills, Projects, Experience, Education, Contact
 - Animated hero with a typing role effect and gradient styling
 - Scroll-reveal animations and active-section navigation highlighting
-- Project cards linking to live Hugging Face demos
+- Project cards linking to live demos on Hugging Face and Vercel
 - Contact form with email delivery via Web3Forms (no server required)
 - Downloadable CV (PDF), available from the hero and the contact section
 

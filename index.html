@@ -650,6 +650,39 @@
           </div>
         </article>
 
+        <!-- Featured Project: Agentic Data Analyst (LLM agent / text-to-SQL) - full-width -->
+        <article class="project-card project-featured lg:col-span-2" data-reveal>
+          <div class="featured-grid">
+            <button type="button" class="dash-frame" data-lightbox="assets/agentic-data-analyst-loop.svg" data-lightbox-alt="Agentic Data Analyst architecture: a think, act, observe loop where the model picks one of three tools (list_tables, get_schema, run_sql), the application code runs it against a read-only DuckDB database of 1,017,209 rows, and the model reads the result back as text and decides again, repeating until it can answer. Guardrails are a SELECT-only check, comment stripping, a query timeout and row and character caps. Results: 72/72 gold set cases across 3 runs, 63 tests, 0 flaky cases, $0 running cost." aria-label="Enlarge the Agentic Data Analyst agent loop diagram">
+              <img src="assets/agentic-data-analyst-loop.svg" alt="Diagram of the agent loop: step 1 Think, the model decides which tool it needs; step 2 Act, the application code runs it; step 3 Observe, the model reads the result as text and decides again, repeating until it can answer. The three tools list_tables, get_schema and run_sql query a read-only DuckDB database of 1,017,209 rows, behind a SELECT-only check, comment stripping, a query timeout and row and character caps. Scored 72 of 72 across 3 runs with 63 tests, 0 flaky cases and zero running cost." loading="lazy" />
+              <span class="cred-zoom">Agent loop and guardrails - click to enlarge</span>
+            </button>
+            <div class="project-body featured-body">
+              <span class="project-category-inline">Agentic AI - LLM Tool Use</span>
+              <div class="flex items-center justify-between gap-4">
+                <h3 class="project-title">Agentic Data Analyst</h3>
+                <span class="project-date font-mono">Aug 2026</span>
+              </div>
+              <p class="project-desc">
+                An AI agent that answers business questions by <span class="text-white">writing and running its own SQL</span> - not a chatbot that talks about data. Handed three tools over a <span class="text-white">DuckDB</span> database of <span class="text-white">1,017,209 Rossmann sales rows</span>, it inspects the schema, writes a query, reads the result, and decides its next step, streaming every query to the UI so you can check its work. Scored <span class="text-accent font-semibold">72/72 across three runs</span> on a gold set whose answers were computed independently in SQL first - including two questions it is <span class="text-white">supposed to refuse</span>, because the database holds no cost data.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Python</span><span class="tag">DuckDB</span><span class="tag">Gemini API</span><span class="tag">Function Calling</span><span class="tag">FastAPI</span><span class="tag">Next.js</span><span class="tag">Tailwind</span><span class="tag">Vercel</span><span class="tag">Pytest</span>
+              </div>
+              <div class="project-links">
+                <a href="https://agentic-data-analyst-web.vercel.app" target="_blank" rel="noopener" class="project-link-primary">
+                  Live Demo
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="https://github.com/daphutapea/agentic-data-analyst" target="_blank" rel="noopener" class="project-link-secondary">
+                  View Code
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-1.7c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
         <!-- Featured Project: Procurement Spend Analytics (Power BI / BI dashboard) - full-width -->
         <article class="project-card project-featured lg:col-span-2" data-reveal>
           <div class="featured-grid">
